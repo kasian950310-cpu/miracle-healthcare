@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>B2B Registration — Miracle Healthcare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="hdr">
+  <a class="logo" href="./">MIRACLE HEALTHCARE</a>
+  <div style="font-size:13px;color:var(--sub);border-left:1px solid var(--line);padding-left:16px" data-i18n="portal">B2B partner portal</div>
+  <div style="flex:1"></div>
+  <div class="langs" role="group" aria-label="Language">
+    <button class="lb" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lb" data-lang="vi" onclick="setLang('vi')">VI</button>
+    <button class="lb" data-lang="th" onclick="setLang('th')">TH</button>
+    <button class="lb" data-lang="ko" onclick="setLang('ko')">KO</button>
+    <button class="lb" data-lang="zh" onclick="setLang('zh')">ZH</button>
+  </div>
+  <a href="./" style="font-size:13.5px;font-weight:600;color:var(--sub)" data-i18n="back">← Back to retail store</a>
+</header>
+
+<section style="background:var(--mist);padding-block:32px">
+  <div class="wrap col gap16">
+    <h1 style="margin:0;font-size:30px;font-weight:800" data-i18n="gateH1">Register for wholesale pricing</h1>
+    <div class="steps">
+      <div class="row" style="gap:10px;flex-wrap:nowrap"><div class="stepn on">1</div><div style="font-size:14px;font-weight:700" data-i18n="s1">Submit documents</div></div>
+      <div class="stepline"></div>
+      <div class="row" style="gap:10px;flex-wrap:nowrap"><div class="stepn off">2</div><div style="font-size:14px;color:var(--sub)" data-i18n="s2">License verification (1-2 days)</div></div>
+      <div class="stepline"></div>
+      <div class="row" style="gap:10px;flex-wrap:nowrap"><div class="stepn off">3</div><div style="font-size:14px;color:var(--sub)" data-i18n="s3">Buy at wholesale prices</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" style="display:flex;flex-wrap:wrap;gap:44px;align-items:flex-start;padding-block:40px 56px">
+
+  <div class="col gap16" style="flex:1 1 360px;min-width:280px">
+    <h2 class="h3" data-i18n="benH">Partner benefits</h2>
+    <div class="col gap12">
+      <div class="panel" style="flex:none;gap:4px"><div style="font-size:15px;font-weight:700" data-i18n="b1t">Tiered wholesale pricing</div><div style="font-size:13.5px;color:var(--sub);line-height:1.5" data-i18n="b1s">Discounts grow with volume — full price list after verification</div></div>
+      <div class="panel" style="flex:none;gap:4px"><div style="font-size:15px;font-weight:700" data-i18n="b2t">Cold-chain delivery</div><div style="font-size:13.5px;color:var(--sub);line-height:1.5" data-i18n="b2s">Fillers and skin boosters shipped refrigerated with temperature logs</div></div>
+      <div class="panel" style="flex:none;gap:4px"><div style="font-size:15px;font-weight:700" data-i18n="b3t">VAT invoices &amp; documents</div><div style="font-size:13.5px;color:var(--sub);line-height:1.5" data-i18n="b3s">E-invoices, CO/CQ and market authorization per batch</div></div>
+      <div class="panel" style="flex:none;gap:4px"><div style="font-size:15px;font-weight:700" data-i18n="b4t">Dedicated manager (KR/local)</div><div style="font-size:13.5px;color:var(--sub);line-height:1.5" data-i18n="b4s">Fast reorders via chat, updates on new arrivals from Korea</div></div>
+    </div>
+    <div class="note-amber"><strong data-i18n="legal1">Legal notice:</strong> <span data-i18n="legal2">Medical devices and pharmaceuticals (fillers, botulinum toxin, etc.) are sold only to licensed medical facilities and practitioners under local health regulations. Accounts that do not pass verification cannot buy these items.</span></div>
+  </div>
+
+  <form class="col gap16" style="flex:1 1 460px;min-width:300px;border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--mist)" onsubmit="event.preventDefault()">
+    <h2 class="h3" data-i18n="formH">Application</h2>
+
+    <div class="col gap6">
+      <div class="lbl" data-i18n="btypeL">Business type</div>
+      <div class="row" style="gap:10px">
+        <button type="button" class="choice on" data-i18n="bt1">Clinic / Hospital</button>
+        <button type="button" class="choice" data-i18n="bt2">Spa / Aesthetic center</button>
+        <button type="button" class="choice" data-i18n="bt3">Reseller / Shop</button>
+      </div>
+    </div>
+
+    <div class="row" style="gap:14px">
+      <div class="field"><label class="lbl" for="bname" data-i18n="bnameL">Business name</label><input class="inp" id="bname" data-i18n-ph="bnamePh" placeholder="e.g. Dermatology clinic …"></div>
+      <div class="field"><label class="lbl" for="tax" data-i18n="taxL">Tax ID</label><input class="inp" id="tax" data-i18n-ph="taxPh" placeholder="Tax number"></div>
+    </div>
+    <div class="row" style="gap:14px">
+      <div class="field"><label class="lbl" for="pname" data-i18n="pnameL">Contact person</label><input class="inp" id="pname" data-i18n-ph="pnamePh" placeholder="Full name"></div>
+      <div class="field"><label class="lbl" for="phone" data-i18n="phoneL">Phone / Chat ID</label><input class="inp" id="phone" data-i18n-ph="phonePh" placeholder="Phone number"></div>
+    </div>
+
+    <div class="col gap6">
+      <label class="lbl" for="lic" data-i18n="licL">Operating license / practice certificate</label>
+      <div class="drop" id="lic"><span data-i18n="licA">Drag and drop or </span><a href="#" data-i18n="licB">choose a file</a><span data-i18n="licC"> (PDF/JPG, max 10MB)</span><br><span style="font-size:12px;color:var(--strike)" data-i18n="licNote">Required for medical devices · Used for verification only</span></div>
+    </div>
+
+    <div class="col gap6">
+      <label class="lbl" for="addr" data-i18n="addrL">Delivery address</label>
+      <input class="inp" id="addr" data-i18n-ph="addrPh" placeholder="Street, district, city">
+    </div>
+
+    <button type="submit" class="btn" data-i18n="submit">Submit — verified in 1-2 business days</button>
+    <div style="font-size:12.5px;color:var(--strike);text-align:center"><span data-i18n="haveAcc">Already have an account?</span> <a href="b2bshop.html" style="font-weight:600" data-i18n="login">Log in</a></div>
+  </form>
+
+</section>
+
+<footer class="foot" style="padding-block:24px;text-align:center;color:var(--sub)">
+  Miracle Healthcare Co., Ltd. · Business license no. [번호] · Sales contact: [이메일]
+</footer>
+
+<script src="assets/i18n.js"></script>
+</body>
+</html>

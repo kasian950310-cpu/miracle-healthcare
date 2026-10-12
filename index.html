@@ -1,0 +1,245 @@
+<title>Miracle Healthcare — K-Beauty Vietnam</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Thai:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- Announcement bar -->
+<div class="annbar">
+  <span data-i18n="b3">Free syringe + saline with every toxin order</span>
+  <button class="x" aria-label="Close" onclick="this.parentElement.style.display='none'">×</button>
+</div>
+
+<!-- Masthead -->
+<header class="ahdr">
+  <div class="lft">
+    <a href="#stores" data-i18n="storeK">Our stores</a>
+    <a href="b2b.html" data-i18n="b2bBtn">For clinics &amp; spas</a>
+  </div>
+  <a class="alogo" href="./">MIRACLE HEALTHCARE</a>
+  <div class="rgt">
+    <div class="langs">
+      <button class="lb on" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lb" data-lang="vi" onclick="setLang('vi')">VI</button>
+      <button class="lb" data-lang="th" onclick="setLang('th')">TH</button>
+      <button class="lb" data-lang="ko" onclick="setLang('ko')">KO</button>
+      <button class="lb" data-lang="zh" onclick="setLang('zh')">ZH</button>
+    </div>
+    <a href="signin.html" data-i18n="signIn">Sign in</a>
+    <a href="cart.html" class="cartlink" data-i18n="cart">Cart (0)</a>
+  </div>
+</header>
+<nav class="anav">
+  <a href="shop.html" data-i18n="shopAll">Shop all</a>
+  <a href="shop.html?cat=tox" data-i18n="c1">Botulinum toxin</a>
+  <a href="shop.html?cat=filler" data-i18n="c2">Fillers</a>
+  <a href="shop.html?cat=booster" data-i18n="c3">Skin boosters</a>
+  <a href="shop.html?cat=numb" data-i18n="c6">Anesthetic creams</a>
+  <a href="shop.html?cat=cosme" data-i18n="c8">Resale cosmetics</a>
+  <a href="contact.html" data-i18n="navContact">Contact</a>
+  <form class="srch" onsubmit="var v=this.querySelector('input').value.trim();location.href='shop.html'+(v?'?q='+encodeURIComponent(v):'');return false">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input type="search" data-i18n-ph="searchPh" placeholder="Search serum, red ginseng, sunscreen…">
+  </form>
+</nav>
+
+<!-- Hero -->
+<section class="hero2">
+  <div class="k" data-i18n="ahK">Introducing</div>
+  <h1 data-i18n="ahT">The new standard of K-aesthetics</h1>
+  <p data-i18n="ahS">Authentic Korean toxins, fillers and skincare — delivered cold-chain from local warehouses across Southeast Asia.</p>
+  <a class="cta" href="shop.html"><span data-i18n="ahB">Explore the catalog</span><span aria-hidden="true">→</span></a>
+  <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+</section>
+
+<!-- New and notable -->
+<section class="sec">
+  <div class="wrap col">
+    <h2 class="sech" data-i18n="newH">New arrivals</h2>
+    <p class="secsub" data-i18n="nnS">A selection of clinic favourites and recent additions to the range.</p>
+    <div class="grid" style="margin-top:44px">
+      <div class="acard">
+        <a class="img" href="product.html?id=innotox">
+          <span class="lab" data-i18n="newAdd">New addition</span>
+          <img src="assets/img/innotox.jpg?v=2" alt="INNOTOX 100U">
+        </a>
+        <div class="nm">INNOTOX 100U</div>
+        <div class="ds">Liquid botulinum toxin · Medytox</div>
+        <div class="pr">₫2.390.000</div>
+        <a class="acbar" href="product.html?id=innotox" data-i18n="addCart">Add to cart</a>
+      </div>
+      <div class="acard">
+        <a class="img" href="product.html?id=coretox">
+          <img src="assets/img/coretox.jpg?v=2" alt="CORETOX 100U">
+        </a>
+        <div class="nm">CORETOX 100U</div>
+        <div class="ds">Botulinum toxin · Medytox</div>
+        <div class="pr">₫2.190.000</div>
+        <a class="acbar" href="product.html?id=coretox" data-i18n="addCart">Add to cart</a>
+      </div>
+      <div class="acard">
+        <a class="img" href="product.html?id=neuraderm">
+          <img src="assets/img/neuraderm.jpg?v=2" alt="NEURADERM skin booster">
+        </a>
+        <div class="nm">NEURADERM</div>
+        <div class="ds">PDRN skin booster line</div>
+        <div class="pr">₫1.590.000</div>
+        <a class="acbar" href="product.html?id=neuraderm" data-i18n="addCart">Add to cart</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px"><a class="obtn" href="shop.html"><span data-i18n="viewAll">View all →</span></a></div>
+  </div>
+</section>
+
+
+<!-- Best sellers -->
+<section class="sec" style="background:var(--mist)">
+  <div class="wrap col">
+    <h2 class="sech">Best sellers</h2>
+    <div class="row" style="gap:18px;margin-top:40px;justify-content:center;flex-wrap:wrap">
+      <a href="product.html?id=innotox" style="flex:0 1 165px;min-width:140px;text-decoration:none;color:var(--ink)"><span style="display:block;aspect-ratio:3/4;overflow:hidden;background:var(--ph)"><img src="assets/img/innotox.jpg?v=2" alt="INNOTOX 100U" style="width:100%;height:100%;object-fit:cover"></span><span style="display:block;margin-top:12px;font-size:13px;font-weight:600;text-align:center">INNOTOX 100U</span><span style="display:block;margin-top:4px;font-size:12.5px;color:var(--sub);text-align:center">₫2.390.000</span></a>
+      <a href="product.html?id=botulax" style="flex:0 1 165px;min-width:140px;text-decoration:none;color:var(--ink)"><span style="display:block;aspect-ratio:3/4;overflow:hidden;background:var(--ph)"><img src="assets/img/botulax.jpg?v=2" alt="Botulax 100U" style="width:100%;height:100%;object-fit:cover"></span><span style="display:block;margin-top:12px;font-size:13px;font-weight:600;text-align:center">Botulax 100U</span><span style="display:block;margin-top:4px;font-size:12.5px;color:var(--sub);text-align:center">₫1.890.000</span></a>
+      <a href="product.html?id=rejuran" style="flex:0 1 165px;min-width:140px;text-decoration:none;color:var(--ink)"><span style="display:block;aspect-ratio:3/4;overflow:hidden;background:var(--ph)"><img src="assets/img/rejuran.jpg?v=2" alt="Rejuran Healer 2ml" style="width:100%;height:100%;object-fit:cover"></span><span style="display:block;margin-top:12px;font-size:13px;font-weight:600;text-align:center">Rejuran Healer 2ml</span><span style="display:block;margin-top:4px;font-size:12.5px;color:var(--sub);text-align:center">₫2.690.000</span></a>
+      <a href="product.html?id=neuramisD" style="flex:0 1 165px;min-width:140px;text-decoration:none;color:var(--ink)"><span style="display:block;aspect-ratio:3/4;overflow:hidden;background:var(--ph)"><img src="assets/img/neuramis.jpg?v=2" alt="NEURAMIS Deep 1.1ml" style="width:100%;height:100%;object-fit:cover"></span><span style="display:block;margin-top:12px;font-size:13px;font-weight:600;text-align:center">NEURAMIS Deep 1.1ml</span><span style="display:block;margin-top:4px;font-size:12.5px;color:var(--sub);text-align:center">₫950.000</span></a>
+      <a href="product.html?id=lipolab" style="flex:0 1 165px;min-width:140px;text-decoration:none;color:var(--ink)"><span style="display:block;aspect-ratio:3/4;overflow:hidden;background:var(--ph)"><img src="assets/img/lipolab.jpg?v=2" alt="Lipo Lab PPC ×10" style="width:100%;height:100%;object-fit:cover"></span><span style="display:block;margin-top:12px;font-size:13px;font-weight:600;text-align:center">Lipo Lab PPC ×10</span><span style="display:block;margin-top:4px;font-size:12.5px;color:var(--sub);text-align:center">₫2.050.000</span></a>
+      <a href="product.html?id=evecain" style="flex:0 1 165px;min-width:140px;text-decoration:none;color:var(--ink)"><span style="display:block;aspect-ratio:3/4;overflow:hidden;background:var(--ph)"><img src="assets/img/evecain.jpg?v=2" alt="EVE CAIN Cream 30g" style="width:100%;height:100%;object-fit:cover"></span><span style="display:block;margin-top:12px;font-size:13px;font-weight:600;text-align:center">EVE CAIN Cream 30g</span><span style="display:block;margin-top:4px;font-size:12.5px;color:var(--sub);text-align:center">₫250.000</span></a>
+    </div>
+    <div style="text-align:center;margin-top:36px"><a class="obtn" href="shop.html"><span data-i18n="viewAll">View all →</span></a></div>
+  </div>
+</section>
+
+<!-- Gift split -->
+<section class="split" style="background:var(--mist)">
+  <div class="txt">
+    <div class="eyebrow" data-i18n="gfB">Claim your gift</div>
+    <h2 style="margin-top:14px" data-i18n="gfT">A welcome gift for every toxin order</h2>
+    <p data-i18n="gfS">Receive a complimentary syringe and saline duo with each toxin order — a considered pairing for precise treatments, packed alongside your cold-chain parcel.</p>
+    <a class="obtn" href="shop.html"><span data-i18n="gfB">Claim your gift</span><span aria-hidden="true">→</span></a>
+  </div>
+  <div class="img"><img src="assets/img/gift.jpg?v=2" alt=""></div>
+</section>
+
+<!-- Professional line with tabs -->
+<section class="split">
+  <div class="img" style="min-height:560px"><img src="assets/img/line.jpg?v=2" alt=""></div>
+  <div class="txt" style="text-align:center">
+    <div class="eyebrow" data-i18n="stK">Professional line</div>
+    <h2 style="margin-top:14px" data-i18n="stT">A formulation — and story — for every treatment</h2>
+    <p style="margin-inline:auto" data-i18n="stS">Discover the professional range across toxins, fillers and skin boosters, each batch with CO/CQ and registration documents.</p>
+    <div class="tabrow2">
+      <a href="shop.html?cat=tox" class="on" data-i18n="c1">Botulinum toxin</a>
+      <a href="shop.html?cat=filler" data-i18n="c2">Fillers</a>
+      <a href="shop.html?cat=booster" data-i18n="c3">Skin boosters</a>
+    </div>
+    <div class="grid" style="margin-top:30px;gap:16px">
+      <a class="acard" href="product.html?id=innotox" style="min-width:140px">
+        <span class="img" style="height:170px"><img src="assets/img/innotox.jpg?v=2" alt="INNOTOX"></span>
+        <span class="nm" style="font-size:13px">INNOTOX</span>
+      </a>
+      <a class="acard" href="product.html?id=botaone" style="min-width:140px">
+        <span class="img" style="height:170px"><img src="assets/img/botaone.jpg?v=2" alt="BOTAONE"></span>
+        <span class="nm" style="font-size:13px">BOTAONE</span>
+      </a>
+      <a class="acard" href="product.html?id=neuramisL" style="min-width:140px">
+        <span class="img" style="height:170px"><img src="assets/img/neuramis.jpg?v=2" alt="NEURAMIS"></span>
+        <span class="nm" style="font-size:13px">NEURAMIS</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Store split -->
+<section class="split" id="stores" style="background:var(--mist)">
+  <div class="txt">
+    <div class="eyebrow" data-i18n="storeK">Our stores</div>
+    <h2 style="margin-top:14px" data-i18n="storeT">Visit us in Ho Chi Minh City</h2>
+    <p data-i18n="storeS">Consult our Korean-trained team in person, see the cold-chain room, and collect same-day orders.</p>
+    <a class="obtn" href="#"><span data-i18n="storeB">Find a store</span><span aria-hidden="true">→</span></a>
+  </div>
+  <div class="img"><img src="assets/img/store.jpg?v=2" alt=""></div>
+</section>
+
+<!-- Discover by category -->
+<section class="sec">
+  <div class="wrap col">
+    <h2 class="sech" data-i18n="dcH">Discover by category</h2>
+    <div class="grid" style="margin-top:40px;gap:18px">
+      <a class="tile" href="shop.html?cat=tox">
+        <span class="im"><img src="assets/img/innotox.jpg?v=2" alt=""></span>
+        <span class="lb2" data-i18n="c1">Botulinum toxin</span>
+      </a>
+      <a class="tile" href="shop.html?cat=filler">
+        <span class="im"><img src="assets/img/neuramis.jpg?v=2" alt=""></span>
+        <span class="lb2" data-i18n="c2">Fillers</span>
+      </a>
+      <a class="tile" href="shop.html?cat=booster">
+        <span class="im"><img src="assets/img/neuraderm.jpg?v=2" alt=""></span>
+        <span class="lb2" data-i18n="c3">Skin boosters</span>
+      </a>
+      <a class="tile" href="shop.html?cat=numb">
+        <span class="im"><img src="assets/img/cat-cream.jpg?v=2" alt=""></span>
+        <span class="lb2" data-i18n="c6">Anesthetic creams</span>
+      </a>
+      <a class="tile" href="shop.html?cat=cosme">
+        <span class="im"><img src="assets/img/cat-cosmetics.jpg?v=2" alt=""></span>
+        <span class="lb2" data-i18n="c8">Resale cosmetics</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Why choose us -->
+<section class="sec">
+  <div class="wrap col">
+    <h2 class="sech">Why choose us</h2>
+    <div class="row" style="gap:18px;margin-top:40px;align-items:stretch">
+      <div style="flex:1 1 260px;border:1px solid var(--line);padding:26px"><div style="font-size:15px;font-weight:700;margin-bottom:10px">Local warehouse, same-day dispatch</div><div style="font-size:13.5px;line-height:1.65;color:var(--sub)">Orders before 14:00 ship the same day from our Vietnam warehouse. HCMC &amp; Hanoi same/next-day — no customs, no import fees, no overseas cold-chain risk.</div></div>
+      <div style="flex:1 1 260px;border:1px solid var(--line);padding:26px"><div style="font-size:15px;font-weight:700;margin-bottom:10px">100% authentic, fully documented</div><div style="font-size:13.5px;line-height:1.65;color:var(--sub)">Sourced directly from Korean manufacturers with invoices, import permits and product notifications. Lot &amp; expiry printed on every box.</div></div>
+      <div style="flex:1 1 260px;border:1px solid var(--line);padding:26px"><div style="font-size:15px;font-weight:700;margin-bottom:10px">Real B2B verification &amp; support</div><div style="font-size:13.5px;line-height:1.65;color:var(--sub)">Professional items sold only to verified clinics and spas. Bilingual support on Zalo &amp; WhatsApp, Mon–Sat 9:00–18:00.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Journal teasers -->
+<section class="sec" style="background:var(--mist)">
+  <div class="wrap col">
+    <h2 class="sech">From the journal</h2>
+    <div class="row" style="gap:18px;margin-top:40px;align-items:stretch">
+      <a href="blog.html" style="flex:1 1 260px;border:1px solid var(--line);text-decoration:none;color:var(--ink);background:var(--bg)"><span style="display:block;aspect-ratio:4/3;overflow:hidden"><img src="assets/img/innotox.jpg?v=2" alt="" style="width:100%;height:100%;object-fit:cover"></span><span style="display:block;padding:18px"><span style="display:block;font-family:var(--fd);font-size:17px;line-height:1.35">INNOTOX vs Botulax: how Korean clinics choose their toxin</span><span style="display:block;margin-top:8px;font-size:12.5px;color:var(--sub)">Toxins · Draft</span></span></a>
+      <a href="blog.html" style="flex:1 1 260px;border:1px solid var(--line);text-decoration:none;color:var(--ink);background:var(--bg)"><span style="display:block;aspect-ratio:4/3;overflow:hidden"><img src="assets/img/rejuran.jpg?v=2" alt="" style="width:100%;height:100%;object-fit:cover"></span><span style="display:block;padding:18px"><span style="display:block;font-family:var(--fd);font-size:17px;line-height:1.35">Rejuran skin boosters: the questions your customers will ask</span><span style="display:block;margin-top:8px;font-size:12.5px;color:var(--sub)">Skin boosters · Draft</span></span></a>
+      <a href="blog.html" style="flex:1 1 260px;border:1px solid var(--line);text-decoration:none;color:var(--ink);background:var(--bg)"><span style="display:block;aspect-ratio:4/3;overflow:hidden"><img src="assets/img/botulax.jpg?v=2" alt="" style="width:100%;height:100%;object-fit:cover"></span><span style="display:block;padding:18px"><span style="display:block;font-family:var(--fd);font-size:17px;line-height:1.35">Cold chain 101: why a local warehouse changes everything</span><span style="display:block;margin-top:8px;font-size:12.5px;color:var(--sub)">Logistics · Draft</span></span></a>
+    </div>
+    <div style="text-align:center;margin-top:36px"><a class="obtn" href="blog.html"><span>View all articles →</span></a></div>
+  </div>
+</section>
+
+<!-- B2B band -->
+<section class="band">
+  <div class="wrap row between" style="padding-block:40px;gap:20px">
+    <div class="col gap8" style="flex:1 1 420px">
+      <div class="kicker" data-i18n="b2bKicker">FOR CLINICS · SPAS · AESTHETIC CENTERS</div>
+      <div style="font-family:var(--fd);font-size:24px;font-weight:600" data-i18n="b2bTitle">Wholesale pricing for medical and spa partners</div>
+      <p class="lead" style="font-size:14px" data-i18n="b2bSub">Fillers, skin boosters and aesthetic supplies are sold only to licensed businesses. Register and get verified in 1-2 business days.</p>
+    </div>
+    <a class="btn-bo" href="b2b.html" data-i18n="b2bCta1">Register a B2B account</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="foot">
+  <div class="wrap row" style="align-items:flex-start;gap:32px">
+    <div class="col gap8" style="flex:2 1 260px">
+      <div class="alogo" style="font-size:24px;text-align:left">MIRACLE HEALTHCARE</div>
+      <div style="color:var(--sub);max-width:40ch;font-size:13px" data-i18n="heroSub">Official import and distribution with full product notifications. Local warehouses — no waiting on air freight, no fakes.</div>
+      <div class="row gap8" style="margin-top:8px">
+        <span class="paychip">VISA</span><span class="paychip">Mastercard</span><span class="paychip">VNPay</span><span class="paychip">MoMo</span><span class="paychip">ZaloPay</span><span class="paychip">Bank QR</span><span class="paychip">COD</span>
+      </div>
+    </div>
+    <div class="col gap8" style="flex:1 1 150px"><div class="ft" data-i18n="fBuy">Shopping</div><a href="policies.html#order" data-i18n="fBuy1">How to order</a><a href="policies.html#shipping" data-i18n="fBuy2">Shipping &amp; COD</a><a href="policies.html#refund" data-i18n="fBuy3">Returns &amp; refunds</a></div>
+    <div class="col gap8" style="flex:1 1 150px"><div class="ft" data-i18n="fAuth">Authenticity</div><a href="#" data-i18n="fAuth1">Look up notification no.</a><a href="#" data-i18n="fAuth2">Import documents</a><a href="#" data-i18n="fAuth3">Authenticity guarantee</a></div>
+    <div class="col gap8" style="flex:1 1 150px"><div class="ft" data-i18n="fB2B">B2B partners</div><a href="b2b.html" data-i18n="fB2B1">Register for wholesale</a><a href="b2bshop.html" data-i18n="b2bCta2">See wholesale pricing</a><a href="contact.html" data-i18n="fB2B3">Contact sales</a></div>
+    <div class="col gap8" style="flex:1 1 150px"><div class="ft">Company</div><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="blog.html">Blog</a><a href="policies.html">Policies</a><div style="font-size:12px;color:var(--sub);margin-top:6px;line-height:1.6">Hotline/Zalo: [번호]<br>sales@[도메인]<br>Mon–Sat 9:00–18:00 ICT</div></div>
+  </div>
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/cart.js"></script>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cart — Miracle Healthcare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Noto+Sans+Thai:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.pg{max-width:980px;margin:0 auto;padding:44px 16px 72px}
+.pg h1{font-family:var(--fd);font-size:36px;margin:0 0 26px}
+.cwrap{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start}
+.clist{flex:2 1 460px;display:flex;flex-direction:column}
+.crow{display:flex;gap:16px;align-items:center;padding:16px 0;border-top:1px solid var(--line)}
+.crow:last-child{border-bottom:1px solid var(--line)}
+.crow .im{width:72px;height:92px;overflow:hidden;background:var(--mist);flex:0 0 72px}
+.crow img{width:100%;height:100%;object-fit:cover}
+.crow .nm{flex:1;font-size:14px;font-weight:600;line-height:1.4}
+.crow .nm a{color:var(--ink);text-decoration:none}
+.crow .pr{font-size:13.5px;color:var(--sub)}
+.qbox{display:flex;border:1px solid var(--line)}
+.qbox button{width:30px;height:34px;background:none;border:0;font-size:15px;cursor:pointer;color:var(--ink)}
+.qbox span{width:36px;display:flex;align-items:center;justify-content:center;font-size:13.5px}
+.crow .sub2{width:110px;text-align:right;font-size:14px;font-weight:700}
+.crow .rm{background:none;border:0;color:var(--sub);font-size:17px;cursor:pointer;padding:4px}
+.csum{flex:1 1 280px;border:1px solid var(--line);padding:22px}
+.csum h2{font-family:var(--fd);font-size:19px;margin:0 0 14px}
+.csum .l{display:flex;justify-content:space-between;font-size:13.5px;padding:7px 0;color:var(--sub)}
+.csum .l.t{border-top:1px solid var(--line);margin-top:8px;padding-top:12px;font-size:15.5px;font-weight:800;color:var(--ink)}
+.csum .shipnote{font-size:12px;color:var(--sub);line-height:1.6;margin-top:10px}
+.csum button{width:100%;margin-top:16px;padding:14px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);font-size:13.5px;font-weight:600;letter-spacing:.05em;cursor:pointer}
+.csum .pays{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.csum .paychip{font-size:10.5px;border:1px solid var(--line);padding:3px 7px;color:var(--sub)}
+.empty{text-align:center;padding:70px 0;color:var(--sub)}
+.empty .big{font-family:var(--fd);font-size:22px;color:var(--ink);margin-bottom:10px}
+.empty a{display:inline-block;margin-top:18px;padding:13px 28px;background:var(--ink);color:var(--bg);font-size:13.5px;font-weight:600;text-decoration:none}
+.rxh{background:var(--mist);border:1px solid var(--line);padding:14px 16px;font-size:12.5px;line-height:1.6;color:var(--sub);margin-bottom:22px}
+.chk{display:none;margin-top:10px;font-size:13px;color:#2E7D52;font-weight:600;text-align:center}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="logo" href="./">MIRACLE HEALTHCARE</a>
+  <nav class="row" style="gap:22px;font-size:14px;font-weight:500">
+    <a href="shop.html" style="color:var(--sub)" data-i18n="navProducts">Products</a>
+    <a href="about.html" style="color:var(--sub)">About</a>
+    <a href="contact.html" style="color:var(--sub)" data-i18n="navContact">Contact</a>
+  </nav>
+  <div style="flex:1"></div>
+  <div class="langs" role="group" aria-label="Language">
+    <button class="lb" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lb" data-lang="vi" onclick="setLang('vi')">VI</button>
+    <button class="lb" data-lang="th" onclick="setLang('th')">TH</button>
+    <button class="lb" data-lang="ko" onclick="setLang('ko')">KO</button>
+    <button class="lb" data-lang="zh" onclick="setLang('zh')">ZH</button>
+  </div>
+  <a href="signin.html" style="font-size:13.5px;font-weight:600;color:var(--sub)" data-i18n="signIn">Sign in</a>
+  <a class="cartlink" href="cart.html" data-i18n="cart">Cart (0)</a>
+</header>
+
+<div class="pg">
+  <h1>Shopping cart</h1>
+  <div class="rxh"><b style="color:var(--ink)">Note:</b> Professional (Rx) items — toxins, lipolysis and whitening injections — are ordered through a verified B2B account and do not appear in the retail cart. <a href="b2b.html" style="font-weight:600">Register for wholesale</a>.</div>
+  <div id="cartBody"></div>
+</div>
+
+<footer class="foot" style="padding-block:24px;text-align:center;color:var(--sub);font-size:13px">
+  <a href="about.html" style="color:var(--sub)">About</a> · <a href="contact.html" style="color:var(--sub)">Contact</a> · <a href="blog.html" style="color:var(--sub)">Blog</a> · <a href="policies.html" style="color:var(--sub)">Policies</a><br>
+  <span data-i18n="footNote">Medical devices / pharmaceuticals sold only to licensed businesses</span> · Miracle Healthcare Co., Ltd. · Business license no. [번호]
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/cart.js"></script>
+<script>
+var FREE=5000000;
+function render(){
+ var c=kbGet(), ids=Object.keys(c).filter(function(k){return KB_CAT[k]&&c[k]>0});
+ var el=document.getElementById('cartBody');
+ if(!ids.length){
+  el.innerHTML='<div class="empty"><div class="big">Your cart is empty</div>Browse the catalog — cosmetics and supplies can be ordered right away.<br><a href="shop.html">Return to shop</a></div>';
+  return;
+ }
+ var sub=0;
+ var rows=ids.map(function(k){
+  var it=KB_CAT[k], line=it[1]*c[k]; sub+=line;
+  return '<div class="crow">'
+   +'<span class="im"><img src="assets/img/'+it[2]+'.jpg?v=2" alt=""></span>'
+   +'<span class="nm"><a href="product.html?id='+k+'">'+it[0]+'</a><div class="pr">'+kbFmt(it[1])+'</div></span>'
+   +'<span class="qbox"><button onclick="chg(\''+k+'\',-1)">−</button><span>'+c[k]+'</span><button onclick="chg(\''+k+'\',1)">+</button></span>'
+   +'<span class="sub2">'+kbFmt(line)+'</span>'
+   +'<button class="rm" title="Remove" onclick="chg(\''+k+'\',-999)">×</button>'
+   +'</div>';
+ }).join('');
+ var ship=sub>=FREE?'Free':'Calculated at checkout';
+ el.innerHTML='<div class="cwrap"><div class="clist">'+rows+'</div>'
+  +'<div class="csum"><h2>Order summary</h2>'
+  +'<div class="l"><span>Subtotal</span><span>'+kbFmt(sub)+'</span></div>'
+  +'<div class="l"><span>Shipping</span><span>'+ship+'</span></div>'
+  +'<div class="l t"><span>Total</span><span>'+kbFmt(sub)+'</span></div>'
+  +(sub<FREE?'<div class="shipnote">Add '+kbFmt(FREE-sub)+' more for free shipping (orders over '+kbFmt(FREE)+').</div>':'<div class="shipnote">This order qualifies for free shipping.</div>')
+  +'<button onclick="document.querySelector(\'.chk\').style.display=\'block\'">Checkout</button>'
+  +'<div class="chk">Checkout opens at launch. (Demo)</div>'
+  +'<div class="pays"><span class="paychip">VNPay</span><span class="paychip">MoMo</span><span class="paychip">ZaloPay</span><span class="paychip">VietQR</span><span class="paychip">Visa/MC</span><span class="paychip">COD</span></div>'
+  +'</div></div>';
+}
+function chg(k,d){var c=kbGet();var v=(c[k]||0)+d;kbQty(k,Math.max(0,v));render();}
+render();
+</script>
+</body>
+</html>

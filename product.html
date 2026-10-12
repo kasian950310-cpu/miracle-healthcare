@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Product — Miracle Healthcare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Noto+Sans+Thai:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.pd-wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.pd-grid{display:flex;flex-wrap:wrap;gap:44px;padding-block:22px 44px}
+.pd-gal{flex:1 1 380px;min-width:280px}
+.pd-main{aspect-ratio:3/4;max-width:460px;margin:0 auto;border-radius:4px;overflow:hidden;background:var(--mist)}
+.pd-main img{width:100%;height:100%;object-fit:cover;display:block}
+.pd-thumbs{display:flex;gap:10px;max-width:460px;margin:10px auto 0}
+.pd-thumbs .t{flex:0 0 76px;height:96px;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--mist);display:flex;align-items:center;justify-content:center;font-size:10.5px;color:var(--sub);text-align:center;padding:2px}
+.pd-thumbs .t.cur{border-color:var(--ink)}
+.pd-thumbs .t img{width:100%;height:100%;object-fit:cover}
+.pd-info{flex:1 1 420px;min-width:280px;display:flex;flex-direction:column;gap:16px}
+.pd-eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.pd-info h1{margin:0;font-family:var(--fd);font-size:30px;line-height:1.25;font-weight:700}
+.pd-price{display:flex;gap:12px;align-items:baseline;border-block:1px solid var(--line);padding-block:16px;flex-wrap:wrap}
+.pd-price .n{font-size:28px;font-weight:800}
+.pd-price .w{font-size:13px;color:var(--sub)}
+.pd-stock{font-size:13.5px;color:#2E7D52;font-weight:600}
+.pd-qty{display:flex;align-items:center;gap:12px}
+.pd-qty .box{display:flex;border:1px solid var(--line)}
+.pd-qty button{width:38px;height:40px;background:none;border:0;font-size:17px;cursor:pointer;color:var(--ink)}
+.pd-qty input{width:52px;border:0;text-align:center;font-size:14.5px;background:transparent;color:var(--ink)}
+.pd-btns{display:flex;gap:10px;flex-wrap:wrap}
+.pd-btns .b1{flex:1 1 170px;padding:14px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);font-size:13.5px;font-weight:600;letter-spacing:.04em;cursor:pointer;text-align:center}
+.pd-btns .b2{flex:1 1 170px;padding:14px;background:none;color:var(--ink);border:1px solid var(--ink);font-size:13.5px;font-weight:600;letter-spacing:.04em;cursor:pointer;text-align:center}
+.pd-note{background:var(--mist);border:1px solid var(--line);padding:16px 18px;font-size:13px;line-height:1.65;color:var(--sub)}
+.pd-note b{color:var(--ink)}
+.pd-specs{border-top:1px solid var(--line)}
+.pd-specs .r{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.6}
+.pd-specs .k{flex:0 0 132px;color:var(--sub);font-weight:600}
+.pd-specs .v{flex:1;color:var(--ink)}
+.pd-bundle{border:1px solid var(--line);padding:22px;margin-top:6px}
+.pd-bundle h2{font-family:var(--fd);font-size:20px;margin:0 0 16px}
+.pd-bundle .items{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.pd-bundle .bi{display:flex;flex-direction:column;gap:6px;width:120px;text-align:center;font-size:12px;line-height:1.4;color:var(--ink);text-decoration:none}
+.pd-bundle .bi .im{width:120px;height:150px;overflow:hidden;background:var(--mist);border-radius:3px}
+.pd-bundle .bi img{width:100%;height:100%;object-fit:cover}
+.pd-bundle .bi .pr{font-weight:700}
+.pd-bundle .plus{font-size:20px;color:var(--sub)}
+.pd-bundle .tot{display:flex;align-items:center;gap:16px;margin-top:16px;flex-wrap:wrap}
+.pd-bundle .tot .sum{font-size:17px;font-weight:800}
+.pd-bundle .tot .lbl2{font-size:12.5px;color:var(--sub)}
+.pd-bundle .bbtn{padding:12px 22px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}
+.pd-tabs{display:flex;gap:26px;border-bottom:1px solid var(--line);margin-top:28px}
+.pd-tabs .pt{padding:12px 2px;font-size:14px;font-weight:600;color:var(--sub);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.pd-tabs .pt.cur{color:var(--ink);border-color:var(--ink)}
+.pd-body{max-width:760px;padding-block:26px 10px;font-size:14.5px;line-height:1.75;color:var(--ink)}
+.pd-body h2{font-family:var(--fd);font-size:21px;margin:0 0 10px}
+.pd-body h3{font-family:var(--fd);font-size:18px;margin:28px 0 8px}
+.pd-body ul,.pd-body ol{padding-left:20px;margin:8px 0}
+.pd-body li{margin:5px 0}
+.pd-body .fine{font-size:12.5px;color:var(--sub);border-top:1px solid var(--line);padding-top:12px;margin-top:24px}
+.pd-rel{padding-block:30px 64px}
+.pd-rel h2{font-family:var(--fd);font-size:24px;margin:0 0 18px}
+.relgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px}
+.relgrid .card{max-width:none}
+.bc{padding-top:18px;font-size:12.5px;color:var(--sub)}
+.bc a{color:var(--sub)}
+@media (max-width:640px){.pd-info h1{font-size:24px}.pd-grid{gap:26px}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="logo" href="./">MIRACLE HEALTHCARE</a>
+  <nav class="row" style="gap:22px;font-size:14px;font-weight:500">
+    <a href="./" style="color:var(--sub)" data-i18n="navHome">Home</a>
+    <a href="shop.html" style="color:var(--ink)" data-i18n="navProducts">Products</a>
+    <a href="b2b.html" style="color:var(--sub)" data-i18n="navBrands">For business</a>
+  </nav>
+  <div style="flex:1"></div>
+  <div class="langs" role="group" aria-label="Language">
+    <button class="lb" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lb" data-lang="vi" onclick="setLang('vi')">VI</button>
+    <button class="lb" data-lang="th" onclick="setLang('th')">TH</button>
+    <button class="lb" data-lang="ko" onclick="setLang('ko')">KO</button>
+    <button class="lb" data-lang="zh" onclick="setLang('zh')">ZH</button>
+  </div>
+  <a href="signin.html" style="font-size:13.5px;font-weight:600;color:var(--sub)" data-i18n="signIn">Sign in</a>
+  <a class="cartlink" href="cart.html" data-i18n="cart">Cart (0)</a>
+</header>
+
+<div class="pd-wrap">
+  <div class="bc"><a href="./" id="uiHome">Home</a> / <a href="shop.html" id="bcCat">Shop</a> / <strong style="color:var(--ink)" id="bcName">Product</strong></div>
+
+  <section class="pd-grid">
+    <div class="pd-gal">
+      <div class="pd-main"><img id="pdImg" src="" alt=""></div>
+      <div class="pd-thumbs">
+        <div class="t cur" id="pdThumb"><img src="" alt=""></div>
+        <div class="t" id="uiTh1">[packaging shot]</div>
+        <div class="t" id="uiTh2">[texture / detail]</div>
+        <div class="t" id="uiTh3">[size reference]</div>
+      </div>
+    </div>
+
+    <div class="pd-info">
+      <div>
+        <div class="pd-eyebrow" id="pdCat">Category</div>
+        <h1 id="pdName">Product name</h1>
+        <div class="row" style="gap:8px;margin-top:10px" id="pdPills"></div>
+      </div>
+
+      <div class="pd-price">
+        <div class="n" id="pdPrice">₫0</div>
+        <div class="w" id="pdWho"></div>
+      </div>
+
+      <div class="pd-stock" id="pdStock"></div>
+
+      <div class="pd-qty">
+        <span class="lbl" id="uiQty" style="font-size:12.5px;font-weight:600;color:var(--sub)">QTY</span>
+        <div class="box">
+          <button type="button" onclick="qty(-1)">−</button>
+          <input id="qtyIn" value="1" inputmode="numeric" aria-label="Quantity">
+          <button type="button" onclick="qty(1)">+</button>
+        </div>
+      </div>
+
+      <div class="pd-btns" id="pdBtns"></div>
+      <div id="pdAdded" style="display:none;font-size:13px;font-weight:700;color:#2E7D52"></div>
+
+      <div class="pd-note" id="pdRxNote" style="display:none"></div>
+      <div class="pd-note" id="pdColdNote" style="display:none"></div>
+
+      <div class="pd-specs" id="pdSpecs"></div>
+    </div>
+  </section>
+
+  <section class="pd-bundle" id="pdBundle">
+    <h2 id="uiBundleH">Frequently bought together</h2>
+    <div class="items" id="pdBundleItems"></div>
+    <div class="tot">
+      <div><span class="lbl2" id="uiBundleTotal">Bundle total</span><div class="sum" id="pdBundleSum">₫0</div></div>
+      <span id="pdBundleBtn"></span>
+    </div>
+    <div id="pdBundleNote" style="font-size:12px;color:var(--sub);margin-top:10px"></div>
+  </section>
+
+  <div class="pd-tabs">
+    <div class="pt cur" data-t="desc">Description</div>
+    <div class="pt" data-t="ship">Shipping &amp; returns</div>
+    <div class="pt" data-t="rev">Reviews (0)</div>
+  </div>
+  <div class="pd-body" id="pdBody"></div>
+
+  <section class="pd-rel">
+    <h2 id="uiRelH">You may also like</h2>
+    <div class="relgrid" id="pdRel"></div>
+  </section>
+</div>
+
+<footer class="foot" style="padding-block:24px;text-align:center;color:var(--sub)">
+  <span data-i18n="footNote">Medical devices / pharmaceuticals sold only to licensed businesses</span> · Miracle Healthcare Co., Ltd. · Business license no. [번호] · <a href="policies.html" style="color:var(--sub)">Policies</a>
+</footer>
+
+<div id="pdModal" style="display:none;position:fixed;inset:0;background:rgba(16,22,19,.55);z-index:60;align-items:center;justify-content:center;padding:18px">
+  <div style="background:var(--bg);max-width:460px;padding:28px;border:1px solid var(--line)">
+    <div id="uiMTitle" style="font-family:var(--fd);font-size:19px;font-weight:700;margin-bottom:12px"></div>
+    <div id="uiMBody" style="font-size:13.5px;line-height:1.7;color:var(--sub)"></div>
+    <div style="display:flex;gap:10px;margin-top:20px">
+      <button type="button" id="uiMOk" onclick="pdAck()" style="flex:1;padding:13px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);font-size:13px;font-weight:600;cursor:pointer"></button>
+      <a href="shop.html" id="uiMBack" style="flex:1;padding:13px;text-align:center;border:1px solid var(--ink);color:var(--ink);font-size:13px;font-weight:600;text-decoration:none"></a>
+    </div>
+  </div>
+</div>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/cart.js"></script>
+<script src="assets/pdata.js"></script>
+<script src="assets/pd_vi.js"></script>
+<script src="assets/pd_th.js"></script>
+<script src="assets/pd_ko.js"></script>
+<script src="assets/pd_zh.js"></script>
+<script>
+function fmt(n){return '₫'+n.toLocaleString('vi-VN')}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function el(i){return document.getElementById(i)}
+
+var id=new URLSearchParams(location.search).get('id');
+if(!PD.p[id]) id='innotox';
+var p=PD.p[id];
+var curTab='desc', curL='en';
+
+/* static, language-independent parts */
+document.title=p.name+' — Miracle Healthcare';
+el('pdName').textContent=p.name;
+el('bcName').textContent=p.name;
+el('pdPrice').textContent=fmt(p.pn);
+var img='assets/img/'+p.img+'.jpg?v=2';
+el('pdImg').src=img; el('pdImg').alt=p.name;
+document.querySelector('#pdThumb img').src=img;
+var pills='';
+if(p.rx) pills+='<span class="pill p-rx">Rx</span>';
+if(p.cold) pills+='<span class="pill p-cold">❄ Cold</span>';
+el('pdPills').innerHTML=pills;
+
+var bAll=[id].concat(p.bundle), bRx=bAll.filter(function(k){return PD.p[k].rx}), bOk=bAll.filter(function(k){return !PD.p[k].rx});
+var bsum=0; bAll.forEach(function(k){bsum+=PD.p[k].pn});
+el('pdBundleSum').textContent=fmt(bsum);
+
+function render(lang){
+ curL=lang;
+ var L=PD.ui[lang]||PD.ui.en, C=PD.cats[lang]||PD.cats.en, T=p.t[lang]||p.t.en;
+ el('uiHome').textContent=L.home;
+ el('bcCat').textContent=C[p.cat]; el('bcCat').href='shop.html?cat='+p.cat;
+ el('pdCat').textContent=C[p.cat];
+ el('pdWho').textContent=p.rx?L.whoRx:L.who;
+ el('pdStock').textContent=L.stock;
+ el('uiQty').textContent=L.qty;
+ el('uiTh1').textContent=L.th1; el('uiTh2').textContent=L.th2; el('uiTh3').textContent=L.th3;
+ el('pdAdded').innerHTML=L.added+' <a href="cart.html" style="color:#2E7D52">'+L.viewCart+'</a>';
+ if(p.rx){el('pdRxNote').style.display='block'; el('pdRxNote').innerHTML=L.rxNote;}
+ if(p.cold){el('pdColdNote').style.display='block'; el('pdColdNote').innerHTML=L.coldNote;}
+ el('pdBtns').innerHTML = p.rx
+  ? '<a class="b1" href="b2b.html">'+L.reg+'</a><a class="b2" href="contact.html">'+L.chat+'</a>'
+  : '<button type="button" class="b1" onclick="addMain(false)">'+L.add+'</button><button type="button" class="b2" onclick="addMain(true)">'+L.buy+'</button>';
+ el('pdSpecs').innerHTML=T.specs.map(function(s){return '<div class="r"><div class="k">'+s[0]+'</div><div class="v">'+s[1]+'</div></div>'}).join('');
+ /* bundle */
+ el('uiBundleH').textContent=L.bundleH;
+ el('uiBundleTotal').textContent=L.bundleTotal;
+ function bItem(k,link){var q=PD.p[k];var inner='<span class="im"><img src="assets/img/'+q.img+'.jpg?v=2" alt="'+esc(q.name)+'"></span><span>'+esc(q.name)+'</span><span class="pr">'+fmt(q.pn)+'</span>';
+  return link?'<a class="bi" href="product.html?id='+k+'">'+inner+'</a>':'<span class="bi">'+inner+'</span>'}
+ var bhtml=bItem(id,false);
+ p.bundle.forEach(function(k){bhtml+='<span class="plus">+</span>'+bItem(k,true)});
+ el('pdBundleItems').innerHTML=bhtml;
+ el('pdBundleNote').textContent=bRx.length?L.bundleRx.replace('{items}',bRx.map(function(k){return PD.p[k].name}).join(', ')):'';
+ el('pdBundleBtn').innerHTML = bOk.length
+  ? '<button type="button" class="bbtn" onclick="addBundle()">'+L.bundleAdd+'</button>'
+  : '<a class="bbtn" href="b2b.html">'+L.bundleReg+'</a>';
+ /* tabs */
+ var labels={desc:L.tDesc,ship:L.tShip,rev:L.tRev};
+ document.querySelectorAll('.pd-tabs .pt').forEach(function(t){t.textContent=labels[t.dataset.t]});
+ showTab(curTab);
+ /* related */
+ var rel=Object.keys(PD.p).filter(function(k){return k!==id&&PD.p[k].cat===p.cat});
+ Object.keys(PD.p).forEach(function(k){if(rel.length<4&&k!==id&&rel.indexOf(k)<0)rel.push(k)});
+ el('pdRel').innerHTML=rel.slice(0,4).map(function(k){var q=PD.p[k];
+  return '<a class="card" href="product.html?id='+k+'"><div class="pimg" style="aspect-ratio:3/4;height:auto;width:100%"><img src="assets/img/'+q.img+'.jpg?v=2" alt="'+esc(q.name)+'" style="width:100%;height:100%;object-fit:cover"></div><div class="pbody"><div class="pname">'+esc(q.name)+'</div><div class="row" style="gap:6px">'+(q.rx?'<span class="pill p-rx">Rx</span>':'')+(q.cold?'<span class="pill p-cold">❄ Cold</span>':'')+'</div><div class="pprice">'+fmt(q.pn)+'</div></div></a>'}).join('');
+ /* modal + rel heading */
+ el('uiRelH').textContent=L.relH;
+ el('uiMTitle').textContent=L.mTitle;
+ el('uiMBody').innerHTML=L.mBody;
+ el('uiMOk').textContent=L.mOk;
+ el('uiMBack').textContent=L.mBack;
+}
+
+function showTab(t){
+ curTab=t;
+ var L=PD.ui[curL]||PD.ui.en, T=p.t[curL]||p.t.en;
+ el('pdBody').innerHTML = t==='desc' ? (T.desc+'<p class="fine">'+L.fine+'</p>')
+  : (t==='ship' ? L.ship : '<p style="color:var(--sub)">'+L.rev+'</p>');
+ document.querySelectorAll('.pd-tabs .pt').forEach(function(x){x.classList.toggle('cur',x.dataset.t===t)});
+}
+document.querySelectorAll('.pd-tabs .pt').forEach(function(x){x.onclick=function(){showTab(x.dataset.t)}});
+
+function addMain(go){
+ if(kbAdd(id,el('qtyIn').value)){
+  if(go){location.href='cart.html';return}
+  el('pdAdded').style.display='block';
+ }
+}
+function addBundle(){bOk.forEach(function(k){kbAdd(k,1)});el('pdAdded').style.display='block';}
+function qty(d){var i=el('qtyIn');var v=parseInt(i.value)||1;i.value=Math.max(1,v+d);}
+
+/* acknowledgment modal for professional / cold-chain items */
+if(p.rx||p.cold){
+ var seen=false; try{seen=sessionStorage.getItem('kbAck')==='1'}catch(e){}
+ if(!seen) el('pdModal').style.display='flex';
+}
+function pdAck(){try{sessionStorage.setItem('kbAck','1')}catch(e){} el('pdModal').style.display='none';}
+
+/* hook language switching: re-render dynamic content whenever i18n applies a language */
+if(typeof applyLang==='function'){
+ var _pdApply=applyLang;
+ applyLang=function(l){_pdApply(l); try{render(l)}catch(e){}};
+}
+var initL='en'; try{initL=(typeof detectLang==='function'?detectLang():null)||localStorage.getItem('kb_lang')||'en'}catch(e){}
+render(initL);
+</script>
+</body>
+</html>

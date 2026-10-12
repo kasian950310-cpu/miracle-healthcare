@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blog — Miracle Healthcare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Noto+Sans+Thai:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.pg{max-width:1120px;margin:0 auto;padding:44px 16px 72px}
+.pg h1{font-family:var(--fd);font-size:38px;margin:0 0 8px}
+.pg .sub{font-size:14.5px;color:var(--sub);margin-bottom:34px}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:26px}
+.bp{border:1px solid var(--line);text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.bp .im{aspect-ratio:4/3;overflow:hidden;background:var(--mist)}
+.bp img{width:100%;height:100%;object-fit:cover;display:block}
+.bp .bd{padding:16px 18px 20px;display:flex;flex-direction:column;gap:8px}
+.bp .cat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.bp h2{font-family:var(--fd);font-size:18px;line-height:1.35;margin:0}
+.bp p{font-size:13px;line-height:1.6;color:var(--sub);margin:0}
+.bp .soon{font-size:11.5px;color:var(--sub);border:1px solid var(--line);align-self:flex-start;padding:3px 8px;background:var(--mist)}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="logo" href="./">MIRACLE HEALTHCARE</a>
+  <nav class="row" style="gap:22px;font-size:14px;font-weight:500">
+    <a href="shop.html" style="color:var(--sub)" data-i18n="navProducts">Products</a>
+    <a href="about.html" style="color:var(--sub)">About</a>
+    <a href="blog.html" style="color:var(--ink)">Blog</a>
+    <a href="contact.html" style="color:var(--sub)" data-i18n="navContact">Contact</a>
+  </nav>
+  <div style="flex:1"></div>
+  <div class="langs" role="group" aria-label="Language">
+    <button class="lb" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lb" data-lang="vi" onclick="setLang('vi')">VI</button>
+    <button class="lb" data-lang="th" onclick="setLang('th')">TH</button>
+    <button class="lb" data-lang="ko" onclick="setLang('ko')">KO</button>
+    <button class="lb" data-lang="zh" onclick="setLang('zh')">ZH</button>
+  </div>
+  <a href="signin.html" style="font-size:13.5px;font-weight:600;color:var(--sub)" data-i18n="signIn">Sign in</a>
+  <a class="cartlink" href="cart.html" data-i18n="cart">Cart (0)</a>
+</header>
+
+<div class="pg">
+  <h1>Journal</h1>
+  <div class="sub">Guides and product knowledge for clinics, spas and K-beauty customers. Articles below are editorial drafts prepared for launch.</div>
+
+  <div class="bgrid">
+    <a class="bp" href="#">
+      <span class="im"><img src="assets/img/innotox.jpg?v=2" alt=""></span>
+      <span class="bd"><span class="cat">Toxins</span><h2>INNOTOX vs Botulax: how Korean clinics choose their toxin</h2><p>Liquid vs lyophilized, price per treatment, patient profiles — a practical comparison for your menu.</p><span class="soon">Draft — publishing at launch</span></span>
+    </a>
+    <a class="bp" href="#">
+      <span class="im"><img src="assets/img/rejuran.jpg?v=2" alt=""></span>
+      <span class="bd"><span class="cat">Skin boosters</span><h2>Rejuran skin boosters: the questions your customers will ask</h2><p>What polynucleotides do, how courses are structured, and how to explain realistic expectations.</p><span class="soon">Draft — publishing at launch</span></span>
+    </a>
+    <a class="bp" href="#">
+      <span class="im"><img src="assets/img/botulax.jpg?v=2" alt=""></span>
+      <span class="bd"><span class="cat">Logistics</span><h2>Cold chain 101: why a local warehouse changes everything</h2><p>What happens to temperature-sensitive products in international transit — and how same-day local delivery removes the risk.</p><span class="soon">Draft — publishing at launch</span></span>
+    </a>
+    <a class="bp" href="#">
+      <span class="im"><img src="assets/img/neuramis.jpg?v=2" alt=""></span>
+      <span class="bd"><span class="cat">Fillers</span><h2>Building a filler menu at your spa: where to start</h2><p>Light vs deep gels, lidocaine options, and the three SKUs that cover 80% of treatments.</p><span class="soon">Draft — publishing at launch</span></span>
+    </a>
+    <a class="bp" href="#">
+      <span class="im"><img src="assets/img/luthione.jpg?v=2" alt=""></span>
+      <span class="bd"><span class="cat">Whitening</span><h2>Glutathione brightening programs: the basics</h2><p>How clinics structure course-based brightening menus and combine glutathione with vitamin C.</p><span class="soon">Draft — publishing at launch</span></span>
+    </a>
+    <a class="bp" href="#">
+      <span class="im"><img src="assets/img/bbraun.jpg?v=2" alt=""></span>
+      <span class="bd"><span class="cat">Authenticity</span><h2>How to verify authentic Korean aesthetic products</h2><p>Lot numbers, notification look-ups and import documents — a buyer's checklist against counterfeits.</p><span class="soon">Draft — publishing at launch</span></span>
+    </a>
+  </div>
+</div>
+
+<footer class="foot" style="padding-block:24px;text-align:center;color:var(--sub);font-size:13px">
+  <a href="about.html" style="color:var(--sub)">About</a> · <a href="contact.html" style="color:var(--sub)">Contact</a> · <a href="blog.html" style="color:var(--sub)">Blog</a> · <a href="policies.html" style="color:var(--sub)">Policies</a><br>
+  <span data-i18n="footNote">Medical devices / pharmaceuticals sold only to licensed businesses</span> · Miracle Healthcare Co., Ltd. · Business license no. [번호]
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/cart.js"></script>
+</body>
+</html>

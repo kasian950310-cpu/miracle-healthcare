@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About us — Miracle Healthcare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Noto+Sans+Thai:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.pg{max-width:880px;margin:0 auto;padding:44px 16px 72px}
+.pg h1{font-family:var(--fd);font-size:38px;margin:0 0 6px}
+.pg .sub{font-size:15px;color:var(--sub);margin-bottom:6px}
+.pg .tag{font-size:13px;color:var(--sub);font-style:italic}
+.pg h2{font-family:var(--fd);font-size:23px;margin:44px 0 12px}
+.pg p{font-size:14.5px;line-height:1.75;color:var(--ink);margin:10px 0}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+.why .w{border:1px solid var(--line);padding:22px}
+.why .w b{display:block;font-size:15px;margin-bottom:8px}
+.why .w span{font-size:13.5px;line-height:1.65;color:var(--sub)}
+.cbox{background:var(--mist);border:1px solid var(--line);padding:22px;margin-top:40px;font-size:14px;line-height:1.8}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="logo" href="./">MIRACLE HEALTHCARE</a>
+  <nav class="row" style="gap:22px;font-size:14px;font-weight:500">
+    <a href="shop.html" style="color:var(--sub)" data-i18n="navProducts">Products</a>
+    <a href="about.html" style="color:var(--ink)">About</a>
+    <a href="contact.html" style="color:var(--sub)" data-i18n="navContact">Contact</a>
+  </nav>
+  <div style="flex:1"></div>
+  <div class="langs" role="group" aria-label="Language">
+    <button class="lb" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lb" data-lang="vi" onclick="setLang('vi')">VI</button>
+    <button class="lb" data-lang="th" onclick="setLang('th')">TH</button>
+    <button class="lb" data-lang="ko" onclick="setLang('ko')">KO</button>
+    <button class="lb" data-lang="zh" onclick="setLang('zh')">ZH</button>
+  </div>
+  <a href="signin.html" style="font-size:13.5px;font-weight:600;color:var(--sub)" data-i18n="signIn">Sign in</a>
+  <a class="cartlink" href="cart.html" data-i18n="cart">Cart (0)</a>
+</header>
+
+<div class="pg">
+  <h1>About us</h1>
+  <div class="sub">Authentic Korean aesthetic &amp; medical products — stocked in Vietnam</div>
+  <div class="tag">Korean quality, delivered from around the corner.</div>
+
+  <h2>Reputation. Safety. Real results.</h2>
+  <p>We believe aesthetic medicine should be trustworthy, effective — and close to you. Miracle Healthcare imports Korean aesthetic and medical products through official channels, holds them in our own licensed warehouse in Vietnam, and delivers them to clinics, hospitals, spas and retail customers across the country.</p>
+  <p>Every item is sourced directly from the Korean manufacturer or its authorized exporter, travels with full import documentation, and is stored under the conditions the product requires — including a refrigerated cold chain for toxins and boosters. No gray-market parcels, no counterfeits, no two-week international wait.</p>
+
+  <h2>Why choose us</h2>
+  <div class="why">
+    <div class="w"><b>Local warehouse, same-day dispatch</b><span>Orders before 14:00 leave our Vietnam warehouse the same day. HCMC &amp; Hanoi receive same-day or next-day; no customs, no import fees, no overseas cold-chain risk for the buyer.</span></div>
+    <div class="w"><b>100% authentic, fully documented</b><span>Direct sourcing from Korean manufacturers with invoices, import permits and product notifications. Lot numbers and expiry dates stay printed on every box.</span></div>
+    <div class="w"><b>Real B2B verification &amp; support</b><span>Professional (Rx) items are sold only to verified clinics, hospitals and registered spas. Our bilingual sales team supports your purchasing, documentation and after-sales questions on Zalo and WhatsApp.</span></div>
+  </div>
+
+  <h2>Who we serve</h2>
+  <p>Dermatology and plastic-surgery clinics, hospitals, aesthetic centers and spas buying at wholesale tiers — and individual customers buying cosmetics and home-care products at retail. Professional products are intended for use by trained, licensed practitioners only and are never sold for home use.</p>
+
+  <div class="cbox">
+    <b>Contact</b><br>
+    Hotline / Zalo: [번호] · WhatsApp: [번호] · Email: sales@[도메인]<br>
+    Monday–Saturday, 9:00–18:00 (ICT) · Warehouse &amp; office: Ho Chi Minh City [주소]
+  </div>
+</div>
+
+<footer class="foot" style="padding-block:24px;text-align:center;color:var(--sub);font-size:13px">
+  <a href="about.html" style="color:var(--sub)">About</a> · <a href="contact.html" style="color:var(--sub)">Contact</a> · <a href="blog.html" style="color:var(--sub)">Blog</a> · <a href="policies.html" style="color:var(--sub)">Policies</a><br>
+  <span data-i18n="footNote">Medical devices / pharmaceuticals sold only to licensed businesses</span> · Miracle Healthcare Co., Ltd. · Business license no. [번호]
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact — Miracle Healthcare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Noto+Sans+Thai:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.pg{max-width:980px;margin:0 auto;padding:44px 16px 72px}
+.pg h1{font-family:var(--fd);font-size:38px;margin:0 0 8px}
+.pg .sub{font-size:14.5px;color:var(--sub);margin-bottom:34px}
+.cgrid{display:flex;flex-wrap:wrap;gap:40px}
+.chs{flex:1 1 300px;display:flex;flex-direction:column;gap:14px}
+.ch{border:1px solid var(--line);padding:16px 18px;font-size:14px;line-height:1.6}
+.ch b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);margin-bottom:4px}
+.cform{flex:1 1 380px}
+.cform .fr{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.cform label{flex:1 1 170px;display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:600;color:var(--sub)}
+.cform input,.cform textarea{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:11px 12px;font-size:14px;font-family:inherit}
+.cform textarea{min-height:140px;resize:vertical}
+.cform button{margin-top:14px;padding:14px 34px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);font-size:13.5px;font-weight:600;letter-spacing:.06em;cursor:pointer}
+.ok{display:none;margin-top:12px;font-size:13.5px;color:#2E7D52;font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="logo" href="./">MIRACLE HEALTHCARE</a>
+  <nav class="row" style="gap:22px;font-size:14px;font-weight:500">
+    <a href="shop.html" style="color:var(--sub)" data-i18n="navProducts">Products</a>
+    <a href="about.html" style="color:var(--sub)">About</a>
+    <a href="contact.html" style="color:var(--ink)" data-i18n="navContact">Contact</a>
+  </nav>
+  <div style="flex:1"></div>
+  <div class="langs" role="group" aria-label="Language">
+    <button class="lb" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lb" data-lang="vi" onclick="setLang('vi')">VI</button>
+    <button class="lb" data-lang="th" onclick="setLang('th')">TH</button>
+    <button class="lb" data-lang="ko" onclick="setLang('ko')">KO</button>
+    <button class="lb" data-lang="zh" onclick="setLang('zh')">ZH</button>
+  </div>
+  <a href="signin.html" style="font-size:13.5px;font-weight:600;color:var(--sub)" data-i18n="signIn">Sign in</a>
+  <a class="cartlink" href="cart.html" data-i18n="cart">Cart (0)</a>
+</header>
+
+<div class="pg">
+  <h1>Contact us</h1>
+  <div class="sub">Our bilingual team answers on Zalo, WhatsApp, phone and email — wholesale quotes, B2B verification, order status and product questions.</div>
+
+  <div class="cgrid">
+    <div class="chs">
+      <div class="ch"><b>Zalo / Hotline</b>[번호] — fastest for Vietnam-based customers</div>
+      <div class="ch"><b>WhatsApp</b>[번호] — international &amp; wholesale inquiries</div>
+      <div class="ch"><b>Email</b>sales@[도메인]</div>
+      <div class="ch"><b>Business hours</b>Monday–Saturday, 9:00–18:00 (ICT)<br>Orders before 14:00 ship the same day.</div>
+      <div class="ch"><b>Office &amp; warehouse</b>Ho Chi Minh City, Vietnam [주소]</div>
+    </div>
+
+    <form class="cform" onsubmit="document.querySelector('.ok').style.display='block';return false">
+      <div class="fr">
+        <label>First name<input required></label>
+        <label>Last name<input required></label>
+      </div>
+      <div class="fr">
+        <label style="flex:1 1 100%">Email<input type="email" required></label>
+      </div>
+      <div class="fr">
+        <label style="flex:1 1 100%">Message<textarea required placeholder="Product, quantity, your city — we reply within business hours."></textarea></label>
+      </div>
+      <button type="submit">SEND</button>
+      <div class="ok">Thank you — your message has been received. We will reply within business hours. (Demo form)</div>
+    </form>
+  </div>
+</div>
+
+<footer class="foot" style="padding-block:24px;text-align:center;color:var(--sub);font-size:13px">
+  <a href="about.html" style="color:var(--sub)">About</a> · <a href="contact.html" style="color:var(--sub)">Contact</a> · <a href="blog.html" style="color:var(--sub)">Blog</a> · <a href="policies.html" style="color:var(--sub)">Policies</a><br>
+  <span data-i18n="footNote">Medical devices / pharmaceuticals sold only to licensed businesses</span> · Miracle Healthcare Co., Ltd. · Business license no. [번호]
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/cart.js"></script>
+</body>
+</html>

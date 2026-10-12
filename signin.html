@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sign in — Miracle Healthcare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Noto+Sans+Thai:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.pg{max-width:420px;margin:0 auto;padding:60px 16px 90px}
+.pg h1{font-family:var(--fd);font-size:32px;margin:0 0 6px;text-align:center}
+.pg .sub{font-size:13.5px;color:var(--sub);text-align:center;margin-bottom:30px}
+.sf{display:flex;flex-direction:column;gap:14px}
+.sf label{display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:600;color:var(--sub)}
+.sf input{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:12px;font-size:14px;font-family:inherit}
+.sf button{margin-top:8px;padding:14px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);font-size:13.5px;font-weight:600;letter-spacing:.06em;cursor:pointer}
+.alt{margin-top:26px;border-top:1px solid var(--line);padding-top:22px;font-size:13.5px;line-height:1.7;color:var(--sub);text-align:center}
+.alt a{font-weight:700;color:var(--ink)}
+.note{display:none;margin-top:10px;font-size:13px;color:#2E7D52;font-weight:600;text-align:center}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="logo" href="./">MIRACLE HEALTHCARE</a>
+  <div style="flex:1"></div>
+  <div class="langs" role="group" aria-label="Language">
+    <button class="lb" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lb" data-lang="vi" onclick="setLang('vi')">VI</button>
+    <button class="lb" data-lang="th" onclick="setLang('th')">TH</button>
+    <button class="lb" data-lang="ko" onclick="setLang('ko')">KO</button>
+    <button class="lb" data-lang="zh" onclick="setLang('zh')">ZH</button>
+  </div>
+  <a class="cartlink" href="cart.html" data-i18n="cart">Cart (0)</a>
+</header>
+
+<div class="pg">
+  <h1>Sign in</h1>
+  <div class="sub">Retail customers and verified B2B partners</div>
+  <form class="sf" onsubmit="document.querySelector('.note').style.display='block';return false">
+    <label>Email<input type="email" required autocomplete="username"></label>
+    <label>Password<input type="password" required autocomplete="current-password"></label>
+    <button type="submit">Sign in</button>
+    <div class="note">Accounts open at launch. (Demo page)</div>
+  </form>
+  <div class="alt">
+    New here? <a href="#">Create a retail account</a><br>
+    Clinic, hospital or spa? <a href="b2b.html">Register a B2B wholesale account</a> — verification in 1 business day.
+  </div>
+</div>
+
+<footer class="foot" style="padding-block:24px;text-align:center;color:var(--sub);font-size:13px">
+  <a href="about.html" style="color:var(--sub)">About</a> · <a href="contact.html" style="color:var(--sub)">Contact</a> · <a href="blog.html" style="color:var(--sub)">Blog</a> · <a href="policies.html" style="color:var(--sub)">Policies</a><br>
+  <span data-i18n="footNote">Medical devices / pharmaceuticals sold only to licensed businesses</span> · Miracle Healthcare Co., Ltd. · Business license no. [번호]
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/cart.js"></script>
+</body>
+</html>

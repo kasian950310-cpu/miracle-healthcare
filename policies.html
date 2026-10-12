@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Policies — Miracle Healthcare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Noto+Sans+Thai:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.pol{max-width:760px;margin:0 auto;padding:40px 16px 72px}
+.pol h1{font-family:var(--fd);font-size:34px;margin:0 0 8px}
+.pol h2{font-family:var(--fd);font-size:22px;margin:40px 0 10px;padding-top:24px;border-top:1px solid var(--line)}
+.pol p,.pol li{font-size:14px;line-height:1.7;color:var(--ink)}
+.pol .muted{color:var(--sub)}
+.pol ul{padding-left:18px}
+.draft{display:inline-block;background:var(--mist);color:var(--sub);font-size:11.5px;padding:4px 10px;border:1px solid var(--line);margin-bottom:18px}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="logo" href="./">MIRACLE HEALTHCARE</a>
+  <div class="langs" role="group" aria-label="Language">
+    <button class="lb" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lb" data-lang="vi" onclick="setLang('vi')">VI</button>
+    <button class="lb" data-lang="th" onclick="setLang('th')">TH</button>
+    <button class="lb" data-lang="ko" onclick="setLang('ko')">KO</button>
+    <button class="lb" data-lang="zh" onclick="setLang('zh')">ZH</button>
+  </div>
+  <a href="shop.html" data-i18n="shopAll" style="font-size:13.5px;font-weight:600;color:var(--sub)">Shop all</a>
+</header>
+
+<div class="pol">
+  <h1>Store policies</h1>
+  <span class="draft">DRAFT — review with legal counsel before launch. English version prevails until translations are published.</span>
+
+  <h2 id="order">How to order</h2>
+  <ul>
+    <li>Cosmetics and health supplements can be ordered by any customer.</li>
+    <li>Professional items marked <strong>Rx</strong> (botulinum toxins, fillers, lipolysis and whitening injections) are sold only to <strong>verified business accounts</strong>: licensed clinics, hospitals, dermatology/plastic surgery practices and registered spas.</li>
+    <li>To get verified, register a B2B account and upload your business registration and professional license. Review takes 1 business day.</li>
+    <li>Wholesale tier pricing is applied automatically after verification.</li>
+  </ul>
+
+  <h2 id="payment">Payment</h2>
+  <ul>
+    <li>Bank transfer (VietQR) — recommended for wholesale orders.</li>
+    <li>VNPay, MoMo, ZaloPay e-wallets.</li>
+    <li>Visa / Mastercard (international cards accepted).</li>
+    <li>COD available for retail cosmetics orders under ₫3.000.000 within Vietnam.</li>
+    <li>VAT invoice (hóa đơn điện tử) issued for all B2B orders on request.</li>
+  </ul>
+
+  <h2 id="shipping">Shipping &amp; cold chain</h2>
+  <ul>
+    <li>All items ship from our <strong>local warehouse in Vietnam</strong> — no overseas transit, no customs delay for the buyer.</li>
+    <li>Ho Chi Minh City &amp; Hanoi: same-day or next-day delivery. Other provinces: 1–3 business days.</li>
+    <li>Temperature-sensitive products (toxins, some fillers) are packed in insulated boxes with ice packs and shipped via express cold-chain courier. Orders placed before 14:00 ship the same day.</li>
+    <li>Shipping is free for orders above ₫5.000.000; otherwise a flat fee is shown at checkout.</li>
+    <li>Please inspect the parcel on delivery and report damage with photos within 24 hours.</li>
+  </ul>
+
+  <h2 id="refund">Returns &amp; refunds</h2>
+  <ul>
+    <li>Unopened cosmetics and supplements: returnable within 7 days of delivery in original packaging. Return shipping is paid by the customer unless the item is defective.</li>
+    <li>Cold-chain professional items (toxins, fillers, injections): <strong>not returnable</strong> once dispatched, except for verified transport damage or a wrong-item error on our side — in those cases we reship free of charge.</li>
+    <li>Approved refunds are issued to the original payment method within 5–7 business days.</li>
+    <li>Contact our sales team with your order number and photos before sending anything back.</li>
+  </ul>
+
+  <h2 id="privacy">Privacy policy</h2>
+  <p class="muted">We collect only the data needed to process orders and verify business accounts: name, contact details, delivery address, business registration and license documents for B2B verification, and order history. Documents are stored encrypted, used solely for verification and regulatory compliance, and never sold or shared with third parties except couriers and payment providers as required to fulfil your order. You may request deletion of your account data at any time, subject to record-keeping obligations under Vietnamese law (Decree 13/2023/ND-CP on personal data protection).</p>
+
+  <h2 id="terms">Terms &amp; conditions</h2>
+  <p class="muted">Professional products are intended for use by trained medical and aesthetic professionals only. By purchasing Rx-marked items you confirm that you hold the licenses required in your jurisdiction and accept full responsibility for storage and use after delivery. Product information on this site is not medical advice. All disputes are governed by the laws of Vietnam; place of jurisdiction is Ho Chi Minh City. Prices include VAT unless stated otherwise and may change without notice.</p>
+</div>
+
+<footer class="foot" style="padding-block:24px;text-align:center;color:var(--sub)">
+  <a href="about.html" style="color:var(--sub)">About</a> · <a href="contact.html" style="color:var(--sub)">Contact</a> · <a href="blog.html" style="color:var(--sub)">Blog</a><br>
+  <span data-i18n="footNote">Medical devices / pharmaceuticals sold only to licensed businesses</span> · Miracle Healthcare Co., Ltd. · Business license no. [번호] · Hotline/Zalo: [번호] · Mon–Sat 9:00–18:00 ICT
+</footer>
+
+<script src="assets/i18n.js"></script>
+</body>
+</html>
