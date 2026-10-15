@@ -99,8 +99,7 @@ function render(){
   +'<div class="l"><span>Shipping</span><span>'+ship+'</span></div>'
   +'<div class="l t"><span>Total</span><span>'+kbFmt(sub)+'</span></div>'
   +(sub<FREE?'<div class="shipnote">Add '+kbFmt(FREE-sub)+' more for free shipping (orders over '+kbFmt(FREE)+').</div>':'<div class="shipnote">This order qualifies for free shipping.</div>')
-  +'<button onclick="document.querySelector(\'.chk\').style.display=\'block\'">Checkout</button>'
-  +'<div class="chk">Checkout opens at launch. (Demo)</div>'
+  +'<button onclick="location.href=\'checkout.html\'">Checkout</button>'
   +'<div class="pays"><span class="paychip">VNPay</span><span class="paychip">MoMo</span><span class="paychip">ZaloPay</span><span class="paychip">VietQR</span><span class="paychip">Visa/MC</span><span class="paychip">COD</span></div>'
   +'</div></div>';
 }
