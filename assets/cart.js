@@ -1,18 +1,18 @@
 /* KBEAUTY demo cart — localStorage, per-browser. Rx items cannot be added (B2B verification required). */
 var KB_CAT={
- innotox:['INNOTOX 100U',2390000,'innotox',1],
- coretox:['CORETOX 100U',2190000,'coretox',1],
- botulax:['Botulax 100U',1890000,'botulax',1],
+ innotox:['INNOTOX 100U',2457000,'innotox',1],
+ coretox:['CORETOX 100U',1862000,'coretox',1],
+ botulax:['Botulax 100U',2198000,'botulax',1],
  botaone:['BOTAONE 100U',1950000,'botaone',1],
- neuramisL:['NEURAMIS Light 1.1ml',890000,'neuramis',0],
- neuramisD:['NEURAMIS Deep Lidocaine 1.1ml',950000,'neuramis',0],
- rejeunesse:['Rejeunesse Deep 1.1ml',820000,'rejeunesse',0],
- rejuran:['Rejuran Healer 2ml',2690000,'rejuran',0],
+ neuramisL:['NEURAMIS Light 1.1ml',1009000,'neuramis',0],
+ neuramisD:['NEURAMIS Deep Lidocaine 1.1ml',1009000,'neuramis',0],
+ rejeunesse:['Rejeunesse Deep 1.1ml',931000,'rejeunesse',0],
+ rejuran:['Rejuran Healer 2ml',7732000,'rejuran',0],
  neuraderm:['NEURADERM Core Time Ampoule',1150000,'neuraderm',0],
- lipolab:['Lipo Lab PPC 10ml ×10',2050000,'lipolab',1],
- luthione:['Glutathione 1200mg (10 vials)',1800000,'luthione',1],
- evecain:['EVE CAIN Cream 30g',250000,'evecain',0],
- bbraun:['B.Braun syringe 31G 1ml (100)',190000,'bbraun',0]
+ lipolab:['Lipo Lab PPC 10ml ×10',1862000,'lipolab',1],
+ luthione:['Glutathione 1200mg (10 vials)',2146000,'luthione',1],
+ evecain:['EVE CAIN Cream 30g',259000,'evecain',0],
+ bbraun:['B.Braun syringe 31G 1ml (100)',1552000,'bbraun',0]
 };
 function kbFmt(n){return '₫'+n.toLocaleString('vi-VN')}
 function kbGet(){try{return JSON.parse(localStorage.getItem('kbcart')||'{}')}catch(e){return {}}}
