@@ -10,7 +10,7 @@ PDL('vi',{
  bundleH:'Thường được mua cùng nhau',bundleTotal:'Tổng combo',bundleAdd:'Thêm combo vào giỏ',bundleReg:'Đăng ký B2B để đặt combo này',
  bundleRx:'Các mục Rx trong combo ({items}) được đặt qua tài khoản B2B đã xác minh.',
  tDesc:'Mô tả',tShip:'Giao hàng & đổi trả',tRev:'Đánh giá (0)',
- relH:'Có thể bạn cũng thích',
+ relH:'Có thể bạn cũng thích',rvH:'Đã xem gần đây',
  th1:'[ảnh bao bì]',th2:'[kết cấu / chi tiết]',th3:'[so sánh kích thước]',
  ship:'<p>Mọi đơn hàng đều giao từ kho của chúng tôi tại Việt Nam — không vận chuyển quốc tế, không thủ tục hải quan cho người mua. TP.HCM & Hà Nội: giao trong ngày hoặc hôm sau; các tỉnh khác 1–3 ngày làm việc. Hàng bảo quản lạnh được đóng thùng giữ nhiệt kèm đá gel, chuyển phát nhanh; đơn trước 14:00 giao trong ngày.</p><p>Mỹ phẩm chưa mở hộp được đổi trả trong 7 ngày. Hàng chuyên môn bảo quản lạnh không được hoàn trả sau khi xuất kho, trừ hư hỏng do vận chuyển hoặc giao sai hàng do lỗi của chúng tôi — khi đó chúng tôi gửi lại miễn phí. Chi tiết: <a href="policies.html" style="font-weight:600">chính sách cửa hàng</a>.</p>',
  rev:'Chưa có đánh giá. Đánh giá sẽ mở sau khi ra mắt — chỉ dành cho người mua đã xác minh.',

@@ -1,18 +1,18 @@
 /* KBEAUTY product detail data — core meta + EN content. Other languages load via pd_<lang>.js */
 window.PD={ui:{},cats:{},p:{
- innotox:{cat:'tox',pn:2390000,img:'innotox',rx:1,cold:1,bundle:['evecain','bbraun'],name:'INNOTOX 100U',t:{}},
- coretox:{cat:'tox',pn:2190000,img:'coretox',rx:1,cold:1,bundle:['evecain','bbraun'],name:'CORETOX 100U',t:{}},
- botulax:{cat:'tox',pn:1890000,img:'botulax',rx:1,cold:1,bundle:['evecain','bbraun'],name:'Botulax 100U',t:{}},
- botaone:{cat:'tox',pn:1950000,img:'botaone',rx:1,cold:1,bundle:['evecain','bbraun'],name:'BOTAONE 100U',t:{}},
- neuramisL:{cat:'filler',pn:890000,img:'neuramis',rx:0,cold:1,bundle:['evecain','bbraun'],name:'NEURAMIS Light 1.1ml',t:{}},
- neuramisD:{cat:'filler',pn:950000,img:'neuramis',rx:0,cold:1,bundle:['evecain','bbraun'],name:'NEURAMIS Deep Lidocaine 1.1ml',t:{}},
- rejeunesse:{cat:'filler',pn:820000,img:'rejeunesse',rx:0,cold:1,bundle:['evecain','bbraun'],name:'Rejeunesse Deep 1.1ml',t:{}},
- rejuran:{cat:'booster',pn:2690000,img:'rejuran',rx:0,cold:1,bundle:['evecain','bbraun'],name:'Rejuran Healer 2ml',t:{}},
- neuraderm:{cat:'booster',pn:1150000,img:'neuraderm',rx:0,cold:0,bundle:['rejuran','evecain'],name:'NEURADERM Core Time Ampoule',t:{}},
- lipolab:{cat:'slim',pn:2050000,img:'lipolab',rx:1,cold:0,bundle:['evecain','bbraun'],name:'Lipo Lab PPC 10ml ×10',t:{}},
- luthione:{cat:'white',pn:1800000,img:'luthione',rx:1,cold:1,bundle:['bbraun','evecain'],name:'Glutathione 1200mg (10 vials)',t:{}},
- evecain:{cat:'numb',pn:250000,img:'evecain',rx:0,cold:0,bundle:['bbraun','neuramisD'],name:'EVE CAIN Cream 30g',t:{}},
- bbraun:{cat:'disp',pn:190000,img:'bbraun',rx:0,cold:0,bundle:['evecain','neuramisD'],name:'B.Braun syringe 31G 1ml (100)',t:{}}
+ innotox:{st:320,cat:'tox',pn:2390000,img:'innotox',rx:1,cold:1,bundle:['evecain','bbraun'],name:'INNOTOX 100U',t:{}},
+ coretox:{st:150,cat:'tox',pn:2190000,img:'coretox',rx:1,cold:1,bundle:['evecain','bbraun'],name:'CORETOX 100U',t:{}},
+ botulax:{st:300,cat:'tox',pn:1890000,img:'botulax',rx:1,cold:1,bundle:['evecain','bbraun'],name:'Botulax 100U',t:{}},
+ botaone:{st:85,cat:'tox',pn:1950000,img:'botaone',rx:1,cold:1,bundle:['evecain','bbraun'],name:'BOTAONE 100U',t:{}},
+ neuramisL:{st:280,cat:'filler',pn:890000,img:'neuramis',rx:0,cold:1,bundle:['evecain','bbraun'],name:'NEURAMIS Light 1.1ml',t:{}},
+ neuramisD:{st:190,cat:'filler',pn:950000,img:'neuramis',rx:0,cold:1,bundle:['evecain','bbraun'],name:'NEURAMIS Deep Lidocaine 1.1ml',t:{}},
+ rejeunesse:{st:260,cat:'filler',pn:820000,img:'rejeunesse',rx:0,cold:1,bundle:['evecain','bbraun'],name:'Rejeunesse Deep 1.1ml',t:{}},
+ rejuran:{st:45,cat:'booster',pn:2690000,img:'rejuran',rx:0,cold:1,bundle:['evecain','bbraun'],name:'Rejuran Healer 2ml',t:{}},
+ neuraderm:{st:540,cat:'booster',pn:1150000,img:'neuraderm',rx:0,cold:0,bundle:['rejuran','evecain'],name:'NEURADERM Core Time Ampoule',t:{}},
+ lipolab:{st:190,cat:'slim',pn:2050000,img:'lipolab',rx:1,cold:0,bundle:['evecain','bbraun'],name:'Lipo Lab PPC 10ml ×10',t:{}},
+ luthione:{st:240,cat:'white',pn:1800000,img:'luthione',rx:1,cold:1,bundle:['bbraun','evecain'],name:'Glutathione 1200mg (10 vials)',t:{}},
+ evecain:{st:540,cat:'numb',pn:250000,img:'evecain',rx:0,cold:0,bundle:['bbraun','neuramisD'],name:'EVE CAIN Cream 30g',t:{}},
+ bbraun:{st:1200,cat:'disp',pn:190000,img:'bbraun',rx:0,cold:0,bundle:['evecain','neuramisD'],name:'B.Braun syringe 31G 1ml (100)',t:{}}
 }};
 window.PDL=function(lang,ui,cats,data){PD.ui[lang]=ui;PD.cats[lang]=cats;for(var k in data){if(PD.p[k])PD.p[k].t[lang]=data[k];}};
 
@@ -27,7 +27,7 @@ PDL('en',{
  bundleH:'Frequently bought together',bundleTotal:'Bundle total',bundleAdd:'Add bundle to cart',bundleReg:'Register to order this bundle',
  bundleRx:'Rx items in this bundle ({items}) are ordered through a verified B2B account.',
  tDesc:'Description',tShip:'Shipping & returns',tRev:'Reviews (0)',
- relH:'You may also like',
+ relH:'You may also like',rvH:'Recently viewed',
  th1:'[packaging shot]',th2:'[texture / detail]',th3:'[size reference]',
  ship:'<p>All orders ship from our local warehouse in Vietnam — no overseas transit and no customs procedure for the buyer. Ho Chi Minh City &amp; Hanoi: same-day or next-day delivery; other provinces 1–3 business days. Cold-chain items travel in insulated boxes with ice packs via express courier; orders before 14:00 ship the same day.</p><p>Unopened cosmetics are returnable within 7 days. Cold-chain professional items are not returnable once dispatched, except for verified transport damage or a wrong-item error on our side — then we reship free of charge. Full details: <a href="policies.html" style="font-weight:600">store policies</a>.</p>',
  rev:'No reviews yet. Reviews open after launch — verified buyers only.',

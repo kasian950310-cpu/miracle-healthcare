@@ -155,6 +155,11 @@
     <h2 id="uiRelH">You may also like</h2>
     <div class="relgrid" id="pdRel"></div>
   </section>
+
+  <section class="pd-rel" id="pdRvSec" style="display:none;padding-top:0">
+    <h2 id="uiRvH">Recently viewed</h2>
+    <div class="relgrid" id="pdRv"></div>
+  </section>
 </div>
 
 <footer class="foot" style="padding-block:24px;text-align:center;color:var(--sub)">
@@ -202,6 +207,11 @@ if(p.rx) pills+='<span class="pill p-rx">Rx</span>';
 if(p.cold) pills+='<span class="pill p-cold">❄ Cold</span>';
 el('pdPills').innerHTML=pills;
 
+/* recently viewed: read previous list (excluding this product), then record this visit */
+var rvList=[]; try{rvList=JSON.parse(localStorage.getItem('kbrv')||'[]')}catch(e){}
+rvList=rvList.filter(function(k){return k!==id&&PD.p[k]}).slice(0,4);
+try{localStorage.setItem('kbrv',JSON.stringify([id].concat(rvList).slice(0,8)))}catch(e){}
+
 var bAll=[id].concat(p.bundle), bRx=bAll.filter(function(k){return PD.p[k].rx}), bOk=bAll.filter(function(k){return !PD.p[k].rx});
 var bsum=0; bAll.forEach(function(k){bsum+=PD.p[k].pn});
 el('pdBundleSum').textContent=fmt(bsum);
@@ -213,7 +223,7 @@ function render(lang){
  el('bcCat').textContent=C[p.cat]; el('bcCat').href='shop.html?cat='+p.cat;
  el('pdCat').textContent=C[p.cat];
  el('pdWho').textContent=p.rx?L.whoRx:L.who;
- el('pdStock').textContent=L.stock;
+ el('pdStock').textContent=L.stock+(p.st?' ('+p.st+')':'');
  el('uiQty').textContent=L.qty;
  el('uiTh1').textContent=L.th1; el('uiTh2').textContent=L.th2; el('uiTh3').textContent=L.th3;
  el('pdAdded').innerHTML=L.added+' <a href="cart.html" style="color:#2E7D52">'+L.viewCart+'</a>';
@@ -244,6 +254,13 @@ function render(lang){
  Object.keys(PD.p).forEach(function(k){if(rel.length<4&&k!==id&&rel.indexOf(k)<0)rel.push(k)});
  el('pdRel').innerHTML=rel.slice(0,4).map(function(k){var q=PD.p[k];
   return '<a class="card" href="product.html?id='+k+'"><div class="pimg" style="aspect-ratio:3/4;height:auto;width:100%"><img src="assets/img/'+q.img+'.jpg?v=2" alt="'+esc(q.name)+'" style="width:100%;height:100%;object-fit:cover"></div><div class="pbody"><div class="pname">'+esc(q.name)+'</div><div class="row" style="gap:6px">'+(q.rx?'<span class="pill p-rx">Rx</span>':'')+(q.cold?'<span class="pill p-cold">❄ Cold</span>':'')+'</div><div class="pprice">'+fmt(q.pn)+'</div></div></a>'}).join('');
+ /* recently viewed */
+ el('uiRvH').textContent=L.rvH;
+ if(rvList.length){
+  el('pdRvSec').style.display='block';
+  el('pdRv').innerHTML=rvList.map(function(k){var q=PD.p[k];
+   return '<a class="card" href="product.html?id='+k+'"><div class="pimg" style="aspect-ratio:3/4;height:auto;width:100%"><img src="assets/img/'+q.img+'.jpg?v=2" alt="'+esc(q.name)+'" style="width:100%;height:100%;object-fit:cover"></div><div class="pbody"><div class="pname">'+esc(q.name)+'</div><div class="pprice">'+fmt(q.pn)+'</div></div></a>'}).join('');
+ }
  /* modal + rel heading */
  el('uiRelH').textContent=L.relH;
  el('uiMTitle').textContent=L.mTitle;
