@@ -35,7 +35,6 @@
 .empty .big{font-family:var(--fd);font-size:22px;color:var(--ink);margin-bottom:10px}
 .empty a{display:inline-block;margin-top:18px;padding:13px 28px;background:var(--ink);color:var(--bg);font-size:13.5px;font-weight:600;text-decoration:none}
 .rxh{background:var(--mist);border:1px solid var(--line);padding:14px 16px;font-size:12.5px;line-height:1.6;color:var(--sub);margin-bottom:22px}
-.chk{display:none;margin-top:10px;font-size:13px;color:#2E7D52;font-weight:600;text-align:center}
 </style>
 </head>
 <body>
@@ -60,8 +59,8 @@
 </header>
 
 <div class="pg">
-  <h1>Shopping cart</h1>
-  <div class="rxh"><b style="color:var(--ink)">Note:</b> Professional (Rx) items — toxins, lipolysis and whitening injections — are ordered through a verified B2B account and do not appear in the retail cart. <a href="b2b.html" style="font-weight:600">Register for wholesale</a>.</div>
+  <h1 id="caTitle">Shopping cart</h1>
+  <div class="rxh" id="caRx"></div>
   <div id="cartBody"></div>
 </div>
 
@@ -74,11 +73,22 @@
 <script src="assets/cart.js"></script>
 <script>
 var FREE=5000000;
+var CA={
+en:{title:'Shopping cart',rx:'<b style="color:var(--ink)">Note:</b> Professional (Rx) items — toxins, lipolysis and whitening injections — are ordered through a verified B2B account and do not appear in the retail cart. <a href="b2b.html" style="font-weight:600">Register for wholesale</a>.',empty:'Your cart is empty',emptySub:'Browse the catalog — cosmetics and supplies can be ordered right away.',ret:'Return to shop',sum:'Order summary',subT:'Subtotal',shipT:'Shipping',free:'Free',calc:'Calculated at checkout',totT:'Total',more:'Add {m} more for free shipping (orders over {f}).',qual:'This order qualifies for free shipping.',chk:'Checkout'},
+vi:{title:'Giỏ hàng',rx:'<b style="color:var(--ink)">Lưu ý:</b> Sản phẩm chuyên môn (Rx) — toxin, tiêm tan mỡ và tiêm trắng da — được đặt qua tài khoản B2B đã xác minh và không hiển thị trong giỏ hàng lẻ. <a href="b2b.html" style="font-weight:600">Đăng ký mua sỉ</a>.',empty:'Giỏ hàng trống',emptySub:'Xem danh mục — mỹ phẩm và vật tư có thể đặt ngay.',ret:'Quay lại cửa hàng',sum:'Tóm tắt đơn hàng',subT:'Tạm tính',shipT:'Phí giao hàng',free:'Miễn phí',calc:'Tính khi thanh toán',totT:'Tổng cộng',more:'Mua thêm {m} để được miễn phí giao hàng (đơn trên {f}).',qual:'Đơn hàng này được miễn phí giao hàng.',chk:'Thanh toán'},
+th:{title:'ตะกร้าสินค้า',rx:'<b style="color:var(--ink)">หมายเหตุ:</b> สินค้าสำหรับผู้ประกอบวิชาชีพ (Rx) — ท็อกซิน ยาฉีดสลายไขมันและฉีดผิวขาว — สั่งผ่านบัญชี B2B ที่ยืนยันแล้ว ไม่แสดงในตะกร้าปลีก <a href="b2b.html" style="font-weight:600">สมัครซื้อส่ง</a>',empty:'ตะกร้าว่างเปล่า',emptySub:'ดูแคตตาล็อก — เครื่องสำอางและวัสดุสิ้นเปลืองสั่งได้ทันที',ret:'กลับไปที่ร้าน',sum:'สรุปคำสั่งซื้อ',subT:'ยอดรวมสินค้า',shipT:'ค่าจัดส่ง',free:'ฟรี',calc:'คำนวณตอนชำระเงิน',totT:'ยอดสุทธิ',more:'ซื้อเพิ่มอีก {m} เพื่อจัดส่งฟรี (คำสั่งซื้อเกิน {f})',qual:'คำสั่งซื้อนี้ได้รับการจัดส่งฟรี',chk:'ชำระเงิน'},
+ko:{title:'장바구니',rx:'<b style="color:var(--ink)">참고:</b> 전문가용(Rx) 제품 — 톡신·지방분해·미백 주사 — 은 인증된 B2B 계정으로 주문하며 소매 장바구니에는 표시되지 않습니다. <a href="b2b.html" style="font-weight:600">도매 등록</a>.',empty:'장바구니가 비어 있습니다',emptySub:'카탈로그를 둘러보세요 — 화장품과 소모품은 바로 주문 가능합니다.',ret:'쇼핑으로 돌아가기',sum:'주문 요약',subT:'소계',shipT:'배송비',free:'무료',calc:'결제 시 계산',totT:'합계',more:'{m} 더 담으면 무료배송 ({f} 이상 주문).',qual:'이 주문은 무료배송 대상입니다.',chk:'결제하기'},
+zh:{title:'购物车',rx:'<b style="color:var(--ink)">提示：</b>专业产品（Rx）— 肉毒素、溶脂针和美白针 — 需通过已认证的 B2B 账户订购，不显示在零售购物车中。<a href="b2b.html" style="font-weight:600">注册批发</a>。',empty:'购物车是空的',emptySub:'浏览商品目录 — 化妆品和耗材可立即订购。',ret:'返回商店',sum:'订单摘要',subT:'小计',shipT:'运费',free:'免运费',calc:'结算时计算',totT:'合计',more:'再买 {m} 即可免运费（满 {f}）。',qual:'本订单已享免运费。',chk:'去结算'}
+};
+var curL='en';
+function t(k){return (CA[curL]&&CA[curL][k])||CA.en[k]||k}
 function render(){
+ document.getElementById('caTitle').textContent=t('title');
+ document.getElementById('caRx').innerHTML=t('rx');
  var c=kbGet(), ids=Object.keys(c).filter(function(k){return KB_CAT[k]&&c[k]>0});
  var el=document.getElementById('cartBody');
  if(!ids.length){
-  el.innerHTML='<div class="empty"><div class="big">Your cart is empty</div>Browse the catalog — cosmetics and supplies can be ordered right away.<br><a href="shop.html">Return to shop</a></div>';
+  el.innerHTML='<div class="empty"><div class="big">'+t('empty')+'</div>'+t('emptySub')+'<br><a href="shop.html">'+t('ret')+'</a></div>';
   return;
  }
  var sub=0;
@@ -92,18 +102,21 @@ function render(){
    +'<button class="rm" title="Remove" onclick="chg(\''+k+'\',-999)">×</button>'
    +'</div>';
  }).join('');
- var ship=sub>=FREE?'Free':'Calculated at checkout';
+ var ship=sub>=FREE?t('free'):t('calc');
  el.innerHTML='<div class="cwrap"><div class="clist">'+rows+'</div>'
-  +'<div class="csum"><h2>Order summary</h2>'
-  +'<div class="l"><span>Subtotal</span><span>'+kbFmt(sub)+'</span></div>'
-  +'<div class="l"><span>Shipping</span><span>'+ship+'</span></div>'
-  +'<div class="l t"><span>Total</span><span>'+kbFmt(sub)+'</span></div>'
-  +(sub<FREE?'<div class="shipnote">Add '+kbFmt(FREE-sub)+' more for free shipping (orders over '+kbFmt(FREE)+').</div>':'<div class="shipnote">This order qualifies for free shipping.</div>')
-  +'<button onclick="location.href=\'checkout.html\'">Checkout</button>'
-  +'<div class="pays"><span class="paychip">VNPay</span><span class="paychip">MoMo</span><span class="paychip">ZaloPay</span><span class="paychip">VietQR</span><span class="paychip">Visa/MC</span><span class="paychip">COD</span></div>'
+  +'<div class="csum"><h2>'+t('sum')+'</h2>'
+  +'<div class="l"><span>'+t('subT')+'</span><span>'+kbFmt(sub)+'</span></div>'
+  +'<div class="l"><span>'+t('shipT')+'</span><span>'+ship+'</span></div>'
+  +'<div class="l t"><span>'+t('totT')+'</span><span>'+kbFmt(sub)+'</span></div>'
+  +(sub<FREE?'<div class="shipnote">'+t('more').replace('{m}',kbFmt(FREE-sub)).replace('{f}',kbFmt(FREE))+'</div>':'<div class="shipnote">'+t('qual')+'</div>')
+  +'<button onclick="location.href=\'checkout.html\'">'+t('chk')+'</button>'
+  +'<div class="pays"><span class="paychip">Visa/MC</span><span class="paychip">PayPal</span><span class="paychip">VietQR</span><span class="paychip">VNPay</span><span class="paychip">MoMo</span><span class="paychip">COD</span></div>'
   +'</div></div>';
 }
 function chg(k,d){var c=kbGet();var v=(c[k]||0)+d;kbQty(k,Math.max(0,v));render();}
+if(typeof applyLang==='function'){var _caA=applyLang;applyLang=function(l){_caA(l);curL=CA[l]?l:'en';try{render()}catch(e){}};}
+var initL='en';try{initL=(typeof detectLang==='function'?detectLang():null)||localStorage.getItem('kb_lang')||'en'}catch(e){}
+curL=CA[initL]?initL:'en';
 render();
 </script>
 </body>

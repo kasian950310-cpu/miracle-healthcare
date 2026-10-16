@@ -21,7 +21,7 @@
 .pay .po:last-child{border-bottom:0}
 .pay input{margin-top:3px}
 .pay b{display:block;font-size:14px}
-.pay span{font-size:12.5px;color:var(--sub);line-height:1.55}
+.pay span.d{font-size:12.5px;color:var(--sub);line-height:1.55;display:block}
 .paychip2{display:inline-block;font-size:10px;border:1px solid var(--line);padding:1px 6px;margin-left:6px;color:var(--sub);vertical-align:1px}
 .terms{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--sub);margin-top:16px;line-height:1.6}
 .placebtn{width:100%;margin-top:18px;padding:16px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);font-size:14px;font-weight:700;letter-spacing:.05em;cursor:pointer}
@@ -56,7 +56,7 @@
   <a class="logo" href="./">MIRACLE HEALTHCARE</a>
   <nav class="row" style="gap:22px;font-size:14px;font-weight:500">
     <a href="shop.html" style="color:var(--sub)" data-i18n="navProducts">Products</a>
-    <a href="cart.html" style="color:var(--sub)">Cart</a>
+    <a href="cart.html" style="color:var(--sub)" data-lc="cartLink">Cart</a>
   </nav>
   <div style="flex:1"></div>
   <div class="langs" role="group" aria-label="Language">
@@ -70,114 +70,110 @@
 </header>
 
 <div class="pg" id="pgMain">
-  <h1>Checkout</h1>
+  <h1 data-lc="title">Checkout</h1>
   <div class="cwrap" id="coWrap">
     <form class="cform" id="coForm" onsubmit="placeOrder();return false">
-      <h2>Delivery details</h2>
+      <h2 data-lc="dv">Delivery details</h2>
       <div class="fr">
-        <label>Full name *<input id="fName" required></label>
-        <label>Phone / Zalo *<input id="fPhone" required inputmode="tel"></label>
+        <label><span data-lc="fName">Full name *</span><input id="fName" required></label>
+        <label><span data-lc="fPhone">Phone / Zalo *</span><input id="fPhone" required inputmode="tel"></label>
       </div>
       <div class="fr">
-        <label>Email (order confirmation)<input id="fEmail" type="email"></label>
+        <label><span data-lc="fEmail">Email (order confirmation)</span><input id="fEmail" type="email"></label>
       </div>
       <div class="fr">
-        <label>Province / City *<input id="fCity" required placeholder="Ho Chi Minh City"></label>
-        <label>District / Ward *<input id="fDist" required></label>
+        <label><span data-lc="fCity">Province / City *</span><input id="fCity" required placeholder="Ho Chi Minh City"></label>
+        <label><span data-lc="fDist">District / Ward *</span><input id="fDist" required></label>
       </div>
       <div class="fr">
-        <label style="flex:1 1 100%">Street address *<input id="fAddr" required></label>
+        <label style="flex:1 1 100%"><span data-lc="fAddr">Street address *</span><input id="fAddr" required></label>
       </div>
       <div class="fr">
-        <label style="flex:1 1 100%">Order notes (optional)<textarea id="fNote" placeholder="Delivery time, invoice request (hóa đơn điện tử)…"></textarea></label>
+        <label style="flex:1 1 100%"><span data-lc="fNote">Order notes (optional)</span><textarea id="fNote" data-lcp="fNotePh" placeholder="Delivery time, invoice request (hóa đơn điện tử)…"></textarea></label>
       </div>
 
-      <h2 style="margin-top:26px">Payment method</h2>
+      <h2 style="margin-top:26px" data-lc="payH">Payment method</h2>
       <div class="pay">
         <label class="po"><input type="radio" name="pm" value="card">
-          <span><b>Credit / Debit card<span class="paychip2">VISA</span><span class="paychip2">Mastercard</span></b><span>International cards accepted. A secure card payment link is sent to your phone or email right after ordering.</span></span>
+          <span><b><span data-lc="pmCard">Credit / Debit card</span><span class="paychip2">VISA</span><span class="paychip2">Mastercard</span></b><span class="d" data-lc="pmCardD">International cards accepted. A secure card payment link is sent to your phone or email right after ordering.</span></span>
         </label>
         <label class="po"><input type="radio" name="pm" value="paypal">
-          <span><b>PayPal<span class="paychip2">International</span></b><span>For customers outside Vietnam. Cosmetics and consumables only.</span></span>
+          <span><b><span data-lc="pmPP">PayPal</span><span class="paychip2">International</span></b><span class="d" data-lc="pmPPD">For customers outside Vietnam. Cosmetics and consumables only.</span></span>
         </label>
         <label class="po"><input type="radio" name="pm" value="qr" checked>
-          <span><b>Bank transfer — VietQR<span class="paychip2">Recommended</span></b><span>Scan the QR after placing the order. We dispatch as soon as the transfer is confirmed. Best for wholesale orders.</span></span>
+          <span><b><span data-lc="pmQR">Bank transfer — VietQR</span><span class="paychip2" data-lc="rec">Recommended</span></b><span class="d" data-lc="pmQRD">Scan the QR after placing the order. We dispatch as soon as the transfer is confirmed. Best for wholesale orders.</span></span>
         </label>
         <label class="po"><input type="radio" name="pm" value="cod">
-          <span><b>Cash on delivery (COD)</b><span>Pay the courier on delivery. Available for retail orders under ₫3.000.000 within Vietnam.</span></span>
+          <span><b data-lc="pmCOD">Cash on delivery (COD)</b><span class="d" data-lc="pmCODD">Pay the courier on delivery. Available for retail orders under ₫3.000.000 within Vietnam.</span></span>
         </label>
       </div>
 
       <label class="terms"><input type="checkbox" id="fTerms" required>
-        <span>I agree to the <a href="policies.html#terms" target="_blank" style="font-weight:600">terms</a>, <a href="policies.html#shipping" target="_blank" style="font-weight:600">shipping &amp; cold-chain policy</a> and <a href="policies.html#refund" target="_blank" style="font-weight:600">return policy</a>. Professional items are for licensed practitioners only.</span>
+        <span id="termsTxt"></span>
       </label>
 
-      <button type="submit" class="placebtn">Place order</button>
+      <button type="submit" class="placebtn" data-lc="place">Place order</button>
       <div class="err" id="coErr"></div>
     </form>
 
     <aside class="osum">
-      <h2>Your order</h2>
+      <h2 data-lc="yourOrder">Your order</h2>
       <div id="osItems"></div>
       <div class="cpn">
-        <input id="cpIn" placeholder="Coupon code">
-        <button type="button" onclick="applyCoupon()">Apply</button>
+        <input id="cpIn" data-lcp="cpnPh" placeholder="Coupon code">
+        <button type="button" onclick="applyCoupon()" data-lc="apply">Apply</button>
       </div>
       <div class="cpnmsg" id="cpMsg"></div>
-      <div class="l"><span>Subtotal</span><span class="n" id="osSub">₫0</span></div>
+      <div class="l"><span data-lc="subT">Subtotal</span><span class="n" id="osSub">₫0</span></div>
       <div class="l" id="osDiscRow" style="display:none"><span id="osDiscLbl">Discount</span><span class="n" id="osDisc">−₫0</span></div>
-      <div class="l"><span>Shipping</span><span class="n" id="osShip">—</span></div>
-      <div class="l t"><span>Total</span><span id="osTot">₫0</span></div>
+      <div class="l"><span data-lc="shipT">Shipping</span><span class="n" id="osShip">—</span></div>
+      <div class="l t"><span data-lc="totT">Total</span><span id="osTot">₫0</span></div>
       <div class="usd" id="osUsd"></div>
-      <div style="font-size:12px;color:var(--sub);line-height:1.6;margin-top:12px">Cold-chain items ship refrigerated the same day for orders before 14:00. HCMC &amp; Hanoi: same/next-day delivery.</div>
+      <div style="font-size:12px;color:var(--sub);line-height:1.6;margin-top:12px" data-lc="coldN">Cold-chain items ship refrigerated the same day for orders before 14:00. HCMC &amp; Hanoi: same/next-day delivery.</div>
     </aside>
   </div>
 
   <div class="done" id="coDone" style="display:none">
-    <h1>Order received</h1>
-    <div class="ono">Order number <b id="doneNo"></b> · Total <b id="doneTot"></b> <span id="doneUsd" style="font-size:12px;color:var(--sub)"></span></div>
+    <h1 data-lc="orderRecv">Order received</h1>
+    <div class="ono"><span data-lc="orderNo">Order number</span> <b id="doneNo"></b> · <span data-lc="totT2">Total</span> <b id="doneTot"></b> <span id="doneUsd" style="font-size:12px;color:var(--sub)"></span></div>
 
     <div id="doneQR" style="display:none">
-      <span class="demo">DEMO bank account — replace with the company account before launch</span>
+      <span class="demo" data-lc="demoBank">DEMO bank account — replace with the company account before launch</span>
       <div class="qrbox">
         <img id="qrImg" src="" alt="VietQR payment code">
         <div class="bi2">
-          <span class="k2">Bank</span><b>Vietcombank</b><br>
-          <span class="k2">Account</span><b>0000000000000</b><br>
-          <span class="k2">Name</span><b>MIRACLE HEALTH CARE VINA</b><br>
-          <span class="k2">Amount</span><b id="qrAmt"></b><br>
-          <span class="k2">Memo</span><b id="qrMemo"></b>
+          <span class="k2" data-lc="bank">Bank</span><b>Vietcombank</b><br>
+          <span class="k2" data-lc="acct">Account</span><b>0000000000000</b><br>
+          <span class="k2" data-lc="acctN">Name</span><b>MIRACLE HEALTH CARE VINA</b><br>
+          <span class="k2" data-lc="amt">Amount</span><b id="qrAmt"></b><br>
+          <span class="k2" data-lc="memo">Memo</span><b id="qrMemo"></b>
         </div>
       </div>
-      <div style="font-size:13px;color:var(--sub);margin-top:14px">Scan with any Vietnamese banking app. Dispatch starts as soon as the transfer arrives — please keep the memo exactly as shown.</div>
+      <div style="font-size:13px;color:var(--sub);margin-top:14px" data-lc="scanN">Scan with any Vietnamese banking app. Dispatch starts as soon as the transfer arrives — please keep the memo exactly as shown.</div>
     </div>
 
     <div id="doneCard" style="display:none" class="payinfo">
-      <span class="demo">DEMO — activates when the card gateway contract is live</span><br>
-      <b>Secure card payment link on its way.</b><br>
-      Our team sends a Visa/Mastercard payment link to your phone or email within business hours. The link opens a secure gateway page — we never see or store your card details. Your order is dispatched as soon as the payment is confirmed.
+      <span class="demo" data-lc="demoCard">DEMO — activates when the card gateway contract is live</span><br>
+      <span id="cardTxt"></span>
     </div>
 
     <div id="donePP" style="display:none" class="payinfo">
-      <span class="demo">DEMO — activates once the company PayPal account is connected</span><br>
-      <b>Pay with PayPal.</b><br>
-      Click below to pay the USD amount shown. Dispatch starts when the payment clears.<br>
-      <a class="paybtn2" id="ppBtn" href="#" target="_blank" rel="noopener">PayPal Checkout — <span id="ppAmt"></span></a>
+      <span class="demo" data-lc="demoPP">DEMO — activates once the company PayPal account is connected</span><br>
+      <span id="ppTxt"></span><br>
+      <a class="paybtn2" id="ppBtn" href="#" target="_blank" rel="noopener">PayPal — <span id="ppAmt"></span></a>
     </div>
 
-    <div id="doneCOD" style="display:none;font-size:14px;line-height:1.8;color:var(--ink)">
-      You chose <b>Cash on delivery</b>. Our team will call or message you on Zalo to confirm the order before dispatch. Please prepare the exact amount for the courier.
-    </div>
+    <div id="doneCOD" style="display:none;font-size:14px;line-height:1.8;color:var(--ink)"><span id="codTxt"></span></div>
 
-    <a class="wa" id="waBtn" href="#" target="_blank">Send order confirmation via WhatsApp / Zalo</a>
+    <a class="wa" id="waBtn" href="#" target="_blank" data-lc="waB">Send order confirmation via WhatsApp / Zalo</a>
 
     <div class="nextinfo">
-      <b style="color:var(--ink)">What happens next</b><br>
-      1. We confirm your payment (transfer / card / PayPal) or order (COD) within business hours.<br>
-      2. Orders before 14:00 ship the same day — cold-chain items in insulated boxes with ice packs.<br>
-      3. You receive the tracking number by SMS / Zalo. Please inspect on delivery and report any issue with photos within 24 hours.
+      <b style="color:var(--ink)" data-lc="nextH">What happens next</b><br>
+      <span data-lc="next1">1. We confirm your payment (transfer / card / PayPal) or order (COD) within business hours.</span><br>
+      <span data-lc="next2">2. Orders before 14:00 ship the same day — cold-chain items in insulated boxes with ice packs.</span><br>
+      <span data-lc="next3">3. You receive the tracking number by SMS / Zalo. Please inspect on delivery and report any issue with photos within 24 hours.</span>
     </div>
-    <div style="margin-top:22px"><a href="shop.html" style="font-size:13.5px;font-weight:600">← Continue shopping</a></div>
+    <div style="margin-top:22px"><a href="shop.html" style="font-size:13.5px;font-weight:600" data-lc="cont">← Continue shopping</a></div>
   </div>
 </div>
 
@@ -191,6 +187,23 @@
 <script>
 var FREE=5000000, COD_MAX=3000000, USD_RATE=25860;
 var COUPONS={REVIEW10:0.10,VIDEO15:0.15};
+var CO={
+en:{cartLink:'Cart',title:'Checkout',dv:'Delivery details',fName:'Full name *',fPhone:'Phone / Zalo *',fEmail:'Email (order confirmation)',fCity:'Province / City *',fDist:'District / Ward *',fAddr:'Street address *',fNote:'Order notes (optional)',fNotePh:'Delivery time, invoice request (hóa đơn điện tử)…',payH:'Payment method',pmCard:'Credit / Debit card',pmCardD:'International cards accepted. A secure card payment link is sent to your phone or email right after ordering.',pmPP:'PayPal',pmPPD:'For customers outside Vietnam. Cosmetics and consumables only.',pmQR:'Bank transfer — VietQR',rec:'Recommended',pmQRD:'Scan the QR after placing the order. We dispatch as soon as the transfer is confirmed. Best for wholesale orders.',pmCOD:'Cash on delivery (COD)',pmCODD:'Pay the courier on delivery. Available for retail orders under ₫3.000.000 within Vietnam.',terms:'I agree to the <a href="policies.html#terms" target="_blank" style="font-weight:600">terms</a>, <a href="policies.html#shipping" target="_blank" style="font-weight:600">shipping &amp; cold-chain policy</a> and <a href="policies.html#refund" target="_blank" style="font-weight:600">return policy</a>. Professional items are for licensed practitioners only.',place:'Place order',errCOD:'COD is available for orders under {amt} — please choose bank transfer or card.',yourOrder:'Your order',cpnPh:'Coupon code',apply:'Apply',cpnOk:'Coupon applied: {c} (−{p}%)',cpnBad:'Invalid coupon code.',cpnEmpty:'Enter a coupon code.',subT:'Subtotal',discT:'Discount ({c} −{p}%)',shipT:'Shipping',free:'Free',courier:'By courier tariff',totT:'Total',totT2:'Total',usdRef:'≈ {u} (reference)',coldN:'Cold-chain items ship refrigerated the same day for orders before 14:00. HCMC & Hanoi: same/next-day delivery.',orderRecv:'Order received',orderNo:'Order number',demoBank:'DEMO bank account — replace with the company account before launch',bank:'Bank',acct:'Account',acctN:'Name',amt:'Amount',memo:'Memo',scanN:'Scan with any Vietnamese banking app. Dispatch starts as soon as the transfer arrives — please keep the memo exactly as shown.',demoCard:'DEMO — activates when the card gateway contract is live',cardTxt:'<b>Secure card payment link on its way.</b><br>Our team sends a Visa/Mastercard payment link to your phone or email within business hours. The link opens a secure gateway page — we never see or store your card details. Your order is dispatched as soon as the payment is confirmed.',demoPP:'DEMO — activates once the company PayPal account is connected',ppTxt:'<b>Pay with PayPal.</b><br>Click below to pay the USD amount shown. Dispatch starts when the payment clears.',codTxt:'You chose <b>Cash on delivery</b>. Our team will call or message you on Zalo to confirm the order before dispatch. Please prepare the exact amount for the courier.',waB:'Send order confirmation via WhatsApp / Zalo',nextH:'What happens next',next1:'1. We confirm your payment (transfer / card / PayPal) or order (COD) within business hours.',next2:'2. Orders before 14:00 ship the same day — cold-chain items in insulated boxes with ice packs.',next3:'3. You receive the tracking number by SMS / Zalo. Please inspect on delivery and report any issue with photos within 24 hours.',cont:'← Continue shopping',empty:'Your cart is empty.',ret:'Return to shop'},
+vi:{cartLink:'Giỏ hàng',title:'Thanh toán',dv:'Thông tin giao hàng',fName:'Họ và tên *',fPhone:'Điện thoại / Zalo *',fEmail:'Email (xác nhận đơn hàng)',fCity:'Tỉnh / Thành phố *',fDist:'Quận / Phường *',fAddr:'Địa chỉ *',fNote:'Ghi chú (không bắt buộc)',fNotePh:'Giờ giao hàng, yêu cầu hóa đơn điện tử…',payH:'Phương thức thanh toán',pmCard:'Thẻ tín dụng / ghi nợ',pmCardD:'Chấp nhận thẻ quốc tế. Link thanh toán bảo mật được gửi tới điện thoại hoặc email ngay sau khi đặt hàng.',pmPP:'PayPal',pmPPD:'Dành cho khách ngoài Việt Nam. Chỉ áp dụng mỹ phẩm và vật tư.',pmQR:'Chuyển khoản — VietQR',rec:'Khuyên dùng',pmQRD:'Quét mã QR sau khi đặt hàng. Chúng tôi giao ngay khi nhận được chuyển khoản. Phù hợp đơn sỉ.',pmCOD:'Thanh toán khi nhận hàng (COD)',pmCODD:'Trả tiền cho shipper khi nhận. Áp dụng đơn lẻ dưới ₫3.000.000 trong Việt Nam.',terms:'Tôi đồng ý với <a href="policies.html#terms" target="_blank" style="font-weight:600">điều khoản</a>, <a href="policies.html#shipping" target="_blank" style="font-weight:600">chính sách giao hàng &amp; chuỗi lạnh</a> và <a href="policies.html#refund" target="_blank" style="font-weight:600">chính sách đổi trả</a>. Sản phẩm chuyên môn chỉ dành cho người hành nghề có giấy phép.',place:'Đặt hàng',errCOD:'COD chỉ áp dụng cho đơn dưới {amt} — vui lòng chọn chuyển khoản hoặc thẻ.',yourOrder:'Đơn hàng của bạn',cpnPh:'Mã giảm giá',apply:'Áp dụng',cpnOk:'Đã áp dụng mã {c} (−{p}%)',cpnBad:'Mã không hợp lệ.',cpnEmpty:'Nhập mã giảm giá.',subT:'Tạm tính',discT:'Giảm giá ({c} −{p}%)',shipT:'Phí giao hàng',free:'Miễn phí',courier:'Theo biểu phí vận chuyển',totT:'Tổng cộng',totT2:'Tổng',usdRef:'≈ {u} (tham khảo)',coldN:'Hàng chuỗi lạnh giao trong ngày cho đơn trước 14:00. TP.HCM & Hà Nội: trong ngày/hôm sau.',orderRecv:'Đã nhận đơn hàng',orderNo:'Mã đơn hàng',demoBank:'TÀI KHOẢN DEMO — thay bằng tài khoản công ty trước khi ra mắt',bank:'Ngân hàng',acct:'Số tài khoản',acctN:'Chủ tài khoản',amt:'Số tiền',memo:'Nội dung',scanN:'Quét bằng ứng dụng ngân hàng bất kỳ. Giao hàng bắt đầu ngay khi nhận được tiền — vui lòng giữ nguyên nội dung chuyển khoản.',demoCard:'DEMO — kích hoạt khi hợp đồng cổng thanh toán có hiệu lực',cardTxt:'<b>Link thanh toán thẻ đang được gửi.</b><br>Đội ngũ của chúng tôi sẽ gửi link thanh toán Visa/Mastercard tới điện thoại hoặc email trong giờ làm việc. Link mở trang cổng bảo mật — chúng tôi không nhìn thấy hay lưu thông tin thẻ. Đơn được giao ngay khi thanh toán xác nhận.',demoPP:'DEMO — kích hoạt khi tài khoản PayPal công ty được kết nối',ppTxt:'<b>Thanh toán bằng PayPal.</b><br>Nhấn nút bên dưới để thanh toán số tiền USD hiển thị. Giao hàng bắt đầu khi thanh toán hoàn tất.',codTxt:'Bạn chọn <b>COD</b>. Chúng tôi sẽ gọi hoặc nhắn Zalo xác nhận trước khi giao. Vui lòng chuẩn bị đúng số tiền cho shipper.',waB:'Gửi xác nhận đơn qua WhatsApp / Zalo',nextH:'Các bước tiếp theo',next1:'1. Chúng tôi xác nhận thanh toán (chuyển khoản / thẻ / PayPal) hoặc đơn COD trong giờ làm việc.',next2:'2. Đơn trước 14:00 giao trong ngày — hàng chuỗi lạnh đóng thùng giữ nhiệt kèm đá gel.',next3:'3. Bạn nhận mã vận đơn qua SMS / Zalo. Kiểm tra khi nhận và báo sự cố kèm ảnh trong 24 giờ.',cont:'← Tiếp tục mua sắm',empty:'Giỏ hàng trống.',ret:'Quay lại cửa hàng'},
+th:{cartLink:'ตะกร้า',title:'ชำระเงิน',dv:'ข้อมูลจัดส่ง',fName:'ชื่อ-นามสกุล *',fPhone:'โทรศัพท์ / Zalo *',fEmail:'อีเมล (ยืนยันคำสั่งซื้อ)',fCity:'จังหวัด / เมือง *',fDist:'เขต / แขวง *',fAddr:'ที่อยู่ *',fNote:'หมายเหตุ (ไม่บังคับ)',fNotePh:'เวลาจัดส่ง คำขอใบกำกับภาษี…',payH:'วิธีชำระเงิน',pmCard:'บัตรเครดิต / เดบิต',pmCardD:'รับบัตรต่างประเทศ ลิงก์ชำระเงินปลอดภัยจะส่งถึงโทรศัพท์หรืออีเมลทันทีหลังสั่งซื้อ',pmPP:'PayPal',pmPPD:'สำหรับลูกค้านอกเวียดนาม เฉพาะเครื่องสำอางและวัสดุสิ้นเปลือง',pmQR:'โอนเงิน — VietQR',rec:'แนะนำ',pmQRD:'สแกน QR หลังสั่งซื้อ เราจัดส่งทันทีที่ยืนยันยอดโอน เหมาะกับคำสั่งซื้อส่ง',pmCOD:'เก็บเงินปลายทาง (COD)',pmCODD:'ชำระกับพนักงานส่งเมื่อรับสินค้า สำหรับคำสั่งซื้อปลีกต่ำกว่า ₫3.000.000 ในเวียดนาม',terms:'ฉันยอมรับ<a href="policies.html#terms" target="_blank" style="font-weight:600">ข้อตกลง</a> <a href="policies.html#shipping" target="_blank" style="font-weight:600">นโยบายจัดส่งและโซ่ความเย็น</a> และ<a href="policies.html#refund" target="_blank" style="font-weight:600">นโยบายคืนสินค้า</a> ผลิตภัณฑ์สำหรับผู้ประกอบวิชาชีพเท่านั้น',place:'สั่งซื้อ',errCOD:'COD ใช้ได้กับคำสั่งซื้อต่ำกว่า {amt} — กรุณาเลือกโอนเงินหรือบัตร',yourOrder:'คำสั่งซื้อของคุณ',cpnPh:'รหัสคูปอง',apply:'ใช้คูปอง',cpnOk:'ใช้คูปอง {c} แล้ว (−{p}%)',cpnBad:'รหัสคูปองไม่ถูกต้อง',cpnEmpty:'กรอกรหัสคูปอง',subT:'ยอดรวมสินค้า',discT:'ส่วนลด ({c} −{p}%)',shipT:'ค่าจัดส่ง',free:'ฟรี',courier:'ตามอัตราขนส่ง',totT:'ยอดสุทธิ',totT2:'ยอดรวม',usdRef:'≈ {u} (อ้างอิง)',coldN:'สินค้าโซ่ความเย็นจัดส่งวันเดียวกันสำหรับคำสั่งซื้อก่อน 14:00 โฮจิมินห์และฮานอย: วันเดียว/วันถัดไป',orderRecv:'ได้รับคำสั่งซื้อแล้ว',orderNo:'หมายเลขคำสั่งซื้อ',demoBank:'บัญชี DEMO — เปลี่ยนเป็นบัญชีบริษัทก่อนเปิดตัว',bank:'ธนาคาร',acct:'เลขบัญชี',acctN:'ชื่อบัญชี',amt:'จำนวนเงิน',memo:'ข้อความ',scanN:'สแกนด้วยแอปธนาคารเวียดนามใดก็ได้ จัดส่งทันทีที่เงินเข้า — กรุณาคงข้อความโอนตามที่แสดง',demoCard:'DEMO — เปิดใช้เมื่อสัญญาเกตเวย์บัตรมีผล',cardTxt:'<b>ลิงก์ชำระเงินด้วยบัตรกำลังส่งถึงคุณ</b><br>ทีมงานจะส่งลิงก์ชำระ Visa/Mastercard ถึงโทรศัพท์หรืออีเมลในเวลาทำการ ลิงก์เปิดหน้าเกตเวย์ปลอดภัย — เราไม่เห็นและไม่เก็บข้อมูลบัตร จัดส่งทันทีที่ยืนยันการชำระ',demoPP:'DEMO — เปิดใช้เมื่อเชื่อมต่อบัญชี PayPal บริษัท',ppTxt:'<b>ชำระด้วย PayPal</b><br>กดปุ่มด้านล่างเพื่อชำระยอด USD ที่แสดง จัดส่งเมื่อการชำระสำเร็จ',codTxt:'คุณเลือก <b>เก็บเงินปลายทาง</b> ทีมงานจะโทรหรือส่ง Zalo ยืนยันก่อนจัดส่ง กรุณาเตรียมเงินพอดีให้พนักงานส่ง',waB:'ส่งยืนยันคำสั่งซื้อทาง WhatsApp / Zalo',nextH:'ขั้นตอนถัดไป',next1:'1. เรายืนยันการชำระ (โอน / บัตร / PayPal) หรือคำสั่ง COD ในเวลาทำการ',next2:'2. คำสั่งซื้อก่อน 14:00 จัดส่งวันเดียวกัน — สินค้าโซ่ความเย็นในกล่องเก็บความเย็นพร้อมไอซ์แพ็ก',next3:'3. รับเลขพัสดุทาง SMS / Zalo ตรวจสอบเมื่อรับและแจ้งปัญหาพร้อมรูปใน 24 ชม.',cont:'← เลือกซื้อสินค้าต่อ',empty:'ตะกร้าว่างเปล่า',ret:'กลับไปที่ร้าน'},
+ko:{cartLink:'장바구니',title:'결제하기',dv:'배송 정보',fName:'이름 *',fPhone:'전화 / Zalo *',fEmail:'이메일 (주문 확인)',fCity:'성/도시 *',fDist:'군/동 *',fAddr:'상세 주소 *',fNote:'주문 메모 (선택)',fNotePh:'배송 시간, 전자세금계산서 요청 등…',payH:'결제 수단',pmCard:'신용 / 체크카드',pmCardD:'해외 카드 사용 가능. 주문 직후 보안 결제 링크를 휴대폰 또는 이메일로 보내드립니다.',pmPP:'PayPal',pmPPD:'베트남 외 해외 고객용. 화장품·소모품 한정.',pmQR:'계좌이체 — VietQR',rec:'권장',pmQRD:'주문 후 QR을 스캔하세요. 입금 확인 즉시 출고됩니다. 도매 주문에 적합.',pmCOD:'착불 결제 (COD)',pmCODD:'수령 시 기사에게 결제. 베트남 내 ₫3.000.000 미만 소매 주문만 가능.',terms:'<a href="policies.html#terms" target="_blank" style="font-weight:600">이용약관</a>, <a href="policies.html#shipping" target="_blank" style="font-weight:600">배송·콜드체인 정책</a>, <a href="policies.html#refund" target="_blank" style="font-weight:600">반품 정책</a>에 동의합니다. 전문가용 제품은 면허 보유 시술자 전용입니다.',place:'주문하기',errCOD:'COD는 {amt} 미만 주문만 가능합니다 — 계좌이체 또는 카드를 선택하세요.',yourOrder:'주문 내역',cpnPh:'쿠폰 코드',apply:'적용',cpnOk:'쿠폰 적용: {c} (−{p}%)',cpnBad:'유효하지 않은 쿠폰입니다.',cpnEmpty:'쿠폰 코드를 입력하세요.',subT:'소계',discT:'할인 ({c} −{p}%)',shipT:'배송비',free:'무료',courier:'택배 요율 적용',totT:'총 결제금액',totT2:'합계',usdRef:'≈ {u} (참고)',coldN:'콜드체인 품목은 14시 이전 주문 시 당일 냉장 출고. 호치민·하노이는 당일/익일 배송.',orderRecv:'주문이 접수되었습니다',orderNo:'주문번호',demoBank:'데모 계좌 — 오픈 전 법인 계좌로 교체',bank:'은행',acct:'계좌번호',acctN:'예금주',amt:'금액',memo:'입금 메모',scanN:'베트남 은행 앱으로 스캔하세요. 입금 확인 즉시 출고됩니다 — 메모를 그대로 유지해 주세요.',demoCard:'데모 — PG 계약 후 활성화',cardTxt:'<b>보안 카드 결제 링크를 보내드립니다.</b><br>영업시간 내 Visa/Mastercard 결제 링크를 휴대폰 또는 이메일로 발송합니다. 링크는 보안 게이트웨이 페이지로 연결되며, 당사는 카드 정보를 보거나 저장하지 않습니다. 결제 확인 즉시 출고됩니다.',demoPP:'데모 — 법인 PayPal 계정 연결 후 활성화',ppTxt:'<b>PayPal로 결제.</b><br>아래 버튼으로 표시된 USD 금액을 결제하세요. 결제 완료 시 출고됩니다.',codTxt:'<b>착불(COD)</b>을 선택하셨습니다. 출고 전 전화 또는 Zalo로 확인드립니다. 기사에게 정확한 금액을 준비해 주세요.',waB:'WhatsApp / Zalo로 주문서 보내기',nextH:'다음 단계',next1:'1. 영업시간 내 결제(이체/카드/PayPal) 또는 COD 주문을 확인합니다.',next2:'2. 14시 이전 주문은 당일 출고 — 콜드체인 품목은 보냉 박스+아이스팩 포장.',next3:'3. SMS/Zalo로 송장번호를 받으세요. 수령 즉시 검수 후 이상 시 24시간 내 사진과 함께 접수.',cont:'← 쇼핑 계속하기',empty:'장바구니가 비어 있습니다.',ret:'쇼핑으로 돌아가기'},
+zh:{cartLink:'购物车',title:'结算',dv:'收货信息',fName:'姓名 *',fPhone:'电话 / Zalo *',fEmail:'邮箱（订单确认）',fCity:'省 / 城市 *',fDist:'区 / 坊 *',fAddr:'详细地址 *',fNote:'订单备注（选填）',fNotePh:'送货时间、电子发票需求…',payH:'支付方式',pmCard:'信用卡 / 借记卡',pmCardD:'支持国际卡。下单后立即将安全支付链接发送到您的手机或邮箱。',pmPP:'PayPal',pmPPD:'适用于越南境外客户。仅限化妆品和耗材。',pmQR:'银行转账 — VietQR',rec:'推荐',pmQRD:'下单后扫码支付。确认到账即发货。适合批发订单。',pmCOD:'货到付款 (COD)',pmCODD:'收货时付款给快递员。仅限越南境内 ₫3.000.000 以下零售订单。',terms:'我同意<a href="policies.html#terms" target="_blank" style="font-weight:600">条款</a>、<a href="policies.html#shipping" target="_blank" style="font-weight:600">配送与冷链政策</a>及<a href="policies.html#refund" target="_blank" style="font-weight:600">退换政策</a>。专业产品仅供持牌从业者使用。',place:'提交订单',errCOD:'COD 仅适用于 {amt} 以下订单 — 请选择转账或刷卡。',yourOrder:'您的订单',cpnPh:'优惠码',apply:'使用',cpnOk:'已使用优惠码 {c}（−{p}%）',cpnBad:'优惠码无效。',cpnEmpty:'请输入优惠码。',subT:'小计',discT:'优惠（{c} −{p}%）',shipT:'运费',free:'免运费',courier:'按快递费率',totT:'合计',totT2:'合计',usdRef:'≈ {u}（参考）',coldN:'冷链商品 14:00 前下单当日冷藏发出。胡志明市和河内：当日/次日送达。',orderRecv:'订单已收到',orderNo:'订单号',demoBank:'演示账户 — 上线前替换为公司账户',bank:'银行',acct:'账号',acctN:'户名',amt:'金额',memo:'转账备注',scanN:'用任意越南银行 App 扫码。到账即发货 — 请保持备注原样。',demoCard:'演示 — 刷卡通道签约后开通',cardTxt:'<b>安全刷卡链接即将送达。</b><br>我们将在营业时间内把 Visa/Mastercard 支付链接发送到您的手机或邮箱。链接为安全网关页面 — 我们不会看到或保存您的卡片信息。确认付款后立即发货。',demoPP:'演示 — 公司 PayPal 账户接入后开通',ppTxt:'<b>使用 PayPal 支付。</b><br>点击下方按钮支付所示美元金额。付款成功后发货。',codTxt:'您选择了<b>货到付款</b>。发货前我们会电话或 Zalo 与您确认。请为快递员准备好确切金额。',waB:'通过 WhatsApp / Zalo 发送订单确认',nextH:'接下来的流程',next1:'1. 我们在营业时间内确认您的付款（转账/刷卡/PayPal）或 COD 订单。',next2:'2. 14:00 前的订单当日发货 — 冷链商品使用保温箱+冰袋包装。',next3:'3. 您将通过短信/Zalo 收到运单号。请收货时验收，如有问题 24 小时内附照片反馈。',cont:'← 继续购物',empty:'购物车是空的。',ret:'返回商店'}
+};
+var curL='en';
+function t(k){return (CO[curL]&&CO[curL][k])||CO.en[k]||k}
+function fillLC(){
+ document.querySelectorAll('[data-lc]').forEach(function(el){el.textContent=t(el.getAttribute('data-lc'))});
+ document.querySelectorAll('[data-lcp]').forEach(function(el){el.setAttribute('placeholder',t(el.getAttribute('data-lcp')))});
+ document.getElementById('termsTxt').innerHTML=t('terms');
+ document.getElementById('cardTxt').innerHTML=t('cardTxt');
+ document.getElementById('ppTxt').innerHTML=t('ppTxt');
+ document.getElementById('codTxt').innerHTML=t('codTxt');
+}
 var cart=kbGet(), ids=Object.keys(cart).filter(function(k){return KB_CAT[k]&&cart[k]>0});
 var sub=0, disc=0, discCode='';
 function usd(n){return '$'+(n/USD_RATE).toFixed(2)+' USD'}
@@ -199,18 +212,18 @@ function totals(){
  document.getElementById('osSub').textContent=kbFmt(sub);
  if(disc>0){
   document.getElementById('osDiscRow').style.display='flex';
-  document.getElementById('osDiscLbl').textContent='Discount ('+discCode+' −'+Math.round(disc*100)+'%)';
+  document.getElementById('osDiscLbl').textContent=t('discT').replace('{c}',discCode).replace('{p}',Math.round(disc*100));
   document.getElementById('osDisc').textContent='−'+kbFmt(dAmt);
  } else document.getElementById('osDiscRow').style.display='none';
- document.getElementById('osShip').textContent=tot>=FREE?'Free':'By courier tariff';
+ document.getElementById('osShip').textContent=tot>=FREE?t('free'):t('courier');
  document.getElementById('osTot').textContent=kbFmt(tot);
- document.getElementById('osUsd').textContent='≈ '+usd(tot)+' (reference)';
+ document.getElementById('osUsd').textContent=t('usdRef').replace('{u}',usd(tot));
  return tot;
 }
 function renderSum(){
  var el=document.getElementById('osItems'); sub=0;
  if(!ids.length){
-  document.getElementById('coWrap').innerHTML='<div style="padding:40px 0;color:var(--sub)">Your cart is empty. <a href="shop.html" style="font-weight:600">Return to shop</a></div>';
+  document.getElementById('coWrap').innerHTML='<div style="padding:40px 0;color:var(--sub)">'+t('empty')+' <a href="shop.html" style="font-weight:600">'+t('ret')+'</a></div>';
   return false;
  }
  el.innerHTML=ids.map(function(k){var it=KB_CAT[k],line=it[1]*cart[k];sub+=line;
@@ -218,21 +231,18 @@ function renderSum(){
  totals();
  return true;
 }
-var hasCart=renderSum();
-
 function applyCoupon(){
  var c=document.getElementById('cpIn').value.trim().toUpperCase();
  var m=document.getElementById('cpMsg'); m.style.display='block';
- if(COUPONS[c]){disc=COUPONS[c];discCode=c;m.style.color='#2E7D52';m.textContent='Coupon applied: '+c+' (−'+Math.round(disc*100)+'%)';}
- else {disc=0;discCode='';m.style.color='#A4540A';m.textContent=c?'Invalid coupon code.':'Enter a coupon code.';}
+ if(COUPONS[c]){disc=COUPONS[c];discCode=c;m.style.color='#2E7D52';m.textContent=t('cpnOk').replace('{c}',c).replace('{p}',Math.round(disc*100));}
+ else {disc=0;discCode='';m.style.color='#A4540A';m.textContent=c?t('cpnBad'):t('cpnEmpty');}
  totals();
 }
-
 function placeOrder(){
  var err=document.getElementById('coErr');
  var pm=document.querySelector('input[name=pm]:checked').value;
  var tot=totals();
- if(pm==='cod'&&tot>COD_MAX){err.textContent='COD is available for orders under '+kbFmt(COD_MAX)+' — please choose bank transfer or card.';err.style.display='block';return;}
+ if(pm==='cod'&&tot>COD_MAX){err.textContent=t('errCOD').replace('{amt}',kbFmt(COD_MAX));err.style.display='block';return;}
  err.style.display='none';
  var no='MH-'+new Date().toISOString().slice(2,10).replace(/-/g,'')+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
  var order={no:no,total:tot,coupon:discCode,pm:pm,items:ids.map(function(k){return KB_CAT[k][0]+' x'+cart[k]}),
@@ -265,6 +275,13 @@ function placeOrder(){
  document.getElementById('waBtn').href='https://wa.me/?text='+encodeURIComponent(msg);
  window.scrollTo(0,0);
 }
+/* language hook */
+function coRender(l){curL=(CO[l]?l:'en');fillLC();if(ids.length)totals();}
+if(typeof applyLang==='function'){var _coA=applyLang;applyLang=function(l){_coA(l);try{coRender(l)}catch(e){}};}
+var initL='en';try{initL=(typeof detectLang==='function'?detectLang():null)||localStorage.getItem('kb_lang')||'en'}catch(e){}
+curL=CO[initL]?initL:'en';
+var hasCart=renderSum();
+fillLC();
 </script>
 </body>
 </html>
