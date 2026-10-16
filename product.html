@@ -110,6 +110,7 @@
 
       <div class="pd-price">
         <div class="n" id="pdPrice">₫0</div>
+        <div class="w" id="pdUsd" style="flex-basis:100%"></div>
         <div class="w" id="pdWho"></div>
       </div>
 
@@ -199,6 +200,7 @@ document.title=p.name+' — Miracle Healthcare';
 el('pdName').textContent=p.name;
 el('bcName').textContent=p.name;
 el('pdPrice').textContent=fmt(p.pn);
+el('pdUsd').textContent='≈ $'+(p.pn/25860).toFixed(2)+' USD';
 var img='assets/img/'+p.img+'.jpg?v=2';
 el('pdImg').src=img; el('pdImg').alt=p.name;
 document.querySelector('#pdThumb img').src=img;

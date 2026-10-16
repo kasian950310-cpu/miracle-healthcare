@@ -19,10 +19,10 @@
 .pay{border:1px solid var(--line);margin-top:8px}
 .pay .po{display:flex;gap:12px;padding:15px 16px;border-bottom:1px solid var(--line);cursor:pointer;align-items:flex-start}
 .pay .po:last-child{border-bottom:0}
-.pay .po.off{opacity:.45;cursor:not-allowed}
 .pay input{margin-top:3px}
 .pay b{display:block;font-size:14px}
 .pay span{font-size:12.5px;color:var(--sub);line-height:1.55}
+.paychip2{display:inline-block;font-size:10px;border:1px solid var(--line);padding:1px 6px;margin-left:6px;color:var(--sub);vertical-align:1px}
 .terms{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--sub);margin-top:16px;line-height:1.6}
 .placebtn{width:100%;margin-top:18px;padding:16px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);font-size:14px;font-weight:700;letter-spacing:.05em;cursor:pointer}
 .err{display:none;margin-top:10px;font-size:13px;color:#A4540A;font-weight:600}
@@ -30,6 +30,11 @@
 .osum .l{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:6px 0;color:var(--sub)}
 .osum .l .n{color:var(--ink)}
 .osum .l.t{border-top:1px solid var(--line);margin-top:10px;padding-top:12px;font-size:15.5px;font-weight:800;color:var(--ink)}
+.osum .usd{font-size:12px;color:var(--sub);text-align:right;margin-top:2px}
+.cpn{display:flex;gap:8px;margin:14px 0 4px}
+.cpn input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:10px 12px;font-size:13px;font-family:inherit;text-transform:uppercase}
+.cpn button{padding:10px 16px;background:none;border:1px solid var(--ink);color:var(--ink);font-size:12.5px;font-weight:700;cursor:pointer}
+.cpnmsg{font-size:12px;margin-bottom:6px;display:none}
 .done{max-width:640px;margin:0 auto;text-align:center;padding:30px 0}
 .done h1{font-family:var(--fd);font-size:30px;margin:0 0 10px}
 .done .ono{font-size:14px;color:var(--sub);margin-bottom:26px}
@@ -40,7 +45,9 @@
 .qrbox .bi2 .k2{color:var(--sub);display:inline-block;width:110px}
 .demo{display:inline-block;background:var(--mist);border:1px solid var(--line);color:var(--sub);font-size:11.5px;padding:3px 9px;margin-bottom:14px}
 .wa{display:inline-block;margin-top:22px;padding:14px 26px;background:var(--ink);color:var(--bg);font-size:13.5px;font-weight:600;text-decoration:none}
+.paybtn2{display:inline-block;margin-top:10px;padding:14px 30px;background:#0070BA;color:#fff;font-size:14px;font-weight:700;text-decoration:none;border-radius:3px}
 .nextinfo{font-size:13px;color:var(--sub);line-height:1.7;margin-top:20px;text-align:left;border-top:1px solid var(--line);padding-top:16px}
+.payinfo{border:1px solid var(--line);padding:24px;font-size:14px;line-height:1.8;text-align:left}
 </style>
 </head>
 <body>
@@ -87,14 +94,17 @@
 
       <h2 style="margin-top:26px">Payment method</h2>
       <div class="pay">
+        <label class="po"><input type="radio" name="pm" value="card">
+          <span><b>Credit / Debit card<span class="paychip2">VISA</span><span class="paychip2">Mastercard</span></b><span>International cards accepted. A secure card payment link is sent to your phone or email right after ordering.</span></span>
+        </label>
+        <label class="po"><input type="radio" name="pm" value="paypal">
+          <span><b>PayPal<span class="paychip2">International</span></b><span>For customers outside Vietnam. Cosmetics and consumables only.</span></span>
+        </label>
         <label class="po"><input type="radio" name="pm" value="qr" checked>
-          <span><b>Bank transfer — VietQR</b><span>Scan the QR after placing the order. We dispatch as soon as the transfer is confirmed. Recommended for wholesale orders.</span></span>
+          <span><b>Bank transfer — VietQR<span class="paychip2">Recommended</span></b><span>Scan the QR after placing the order. We dispatch as soon as the transfer is confirmed. Best for wholesale orders.</span></span>
         </label>
         <label class="po"><input type="radio" name="pm" value="cod">
           <span><b>Cash on delivery (COD)</b><span>Pay the courier on delivery. Available for retail orders under ₫3.000.000 within Vietnam.</span></span>
-        </label>
-        <label class="po off"><input type="radio" name="pm" value="card" disabled>
-          <span><b>Visa / Mastercard · VNPay · MoMo · ZaloPay</b><span>Opens at launch, after payment gateway contract.</span></span>
         </label>
       </div>
 
@@ -109,18 +119,25 @@
     <aside class="osum">
       <h2>Your order</h2>
       <div id="osItems"></div>
+      <div class="cpn">
+        <input id="cpIn" placeholder="Coupon code">
+        <button type="button" onclick="applyCoupon()">Apply</button>
+      </div>
+      <div class="cpnmsg" id="cpMsg"></div>
       <div class="l"><span>Subtotal</span><span class="n" id="osSub">₫0</span></div>
+      <div class="l" id="osDiscRow" style="display:none"><span id="osDiscLbl">Discount</span><span class="n" id="osDisc">−₫0</span></div>
       <div class="l"><span>Shipping</span><span class="n" id="osShip">—</span></div>
       <div class="l t"><span>Total</span><span id="osTot">₫0</span></div>
+      <div class="usd" id="osUsd"></div>
       <div style="font-size:12px;color:var(--sub);line-height:1.6;margin-top:12px">Cold-chain items ship refrigerated the same day for orders before 14:00. HCMC &amp; Hanoi: same/next-day delivery.</div>
     </aside>
   </div>
 
   <div class="done" id="coDone" style="display:none">
     <h1>Order received</h1>
-    <div class="ono">Order number <b id="doneNo"></b> · Total <b id="doneTot"></b></div>
+    <div class="ono">Order number <b id="doneNo"></b> · Total <b id="doneTot"></b> <span id="doneUsd" style="font-size:12px;color:var(--sub)"></span></div>
 
-    <div id="doneQR">
+    <div id="doneQR" style="display:none">
       <span class="demo">DEMO bank account — replace with the company account before launch</span>
       <div class="qrbox">
         <img id="qrImg" src="" alt="VietQR payment code">
@@ -135,6 +152,19 @@
       <div style="font-size:13px;color:var(--sub);margin-top:14px">Scan with any Vietnamese banking app. Dispatch starts as soon as the transfer arrives — please keep the memo exactly as shown.</div>
     </div>
 
+    <div id="doneCard" style="display:none" class="payinfo">
+      <span class="demo">DEMO — activates when the card gateway contract is live</span><br>
+      <b>Secure card payment link on its way.</b><br>
+      Our team sends a Visa/Mastercard payment link to your phone or email within business hours. The link opens a secure gateway page — we never see or store your card details. Your order is dispatched as soon as the payment is confirmed.
+    </div>
+
+    <div id="donePP" style="display:none" class="payinfo">
+      <span class="demo">DEMO — activates once the company PayPal account is connected</span><br>
+      <b>Pay with PayPal.</b><br>
+      Click below to pay the USD amount shown. Dispatch starts when the payment clears.<br>
+      <a class="paybtn2" id="ppBtn" href="#" target="_blank" rel="noopener">PayPal Checkout — <span id="ppAmt"></span></a>
+    </div>
+
     <div id="doneCOD" style="display:none;font-size:14px;line-height:1.8;color:var(--ink)">
       You chose <b>Cash on delivery</b>. Our team will call or message you on Zalo to confirm the order before dispatch. Please prepare the exact amount for the courier.
     </div>
@@ -143,7 +173,7 @@
 
     <div class="nextinfo">
       <b style="color:var(--ink)">What happens next</b><br>
-      1. We confirm your payment (transfer) or order (COD) within business hours.<br>
+      1. We confirm your payment (transfer / card / PayPal) or order (COD) within business hours.<br>
       2. Orders before 14:00 ship the same day — cold-chain items in insulated boxes with ice packs.<br>
       3. You receive the tracking number by SMS / Zalo. Please inspect on delivery and report any issue with photos within 24 hours.
     </div>
@@ -159,9 +189,24 @@
 <script src="assets/i18n.js"></script>
 <script src="assets/cart.js"></script>
 <script>
-var FREE=5000000, COD_MAX=3000000;
+var FREE=5000000, COD_MAX=3000000, USD_RATE=25860;
+var COUPONS={REVIEW10:0.10,VIDEO15:0.15};
 var cart=kbGet(), ids=Object.keys(cart).filter(function(k){return KB_CAT[k]&&cart[k]>0});
-var sub=0;
+var sub=0, disc=0, discCode='';
+function usd(n){return '$'+(n/USD_RATE).toFixed(2)+' USD'}
+function totals(){
+ var dAmt=Math.round(sub*disc), tot=sub-dAmt;
+ document.getElementById('osSub').textContent=kbFmt(sub);
+ if(disc>0){
+  document.getElementById('osDiscRow').style.display='flex';
+  document.getElementById('osDiscLbl').textContent='Discount ('+discCode+' −'+Math.round(disc*100)+'%)';
+  document.getElementById('osDisc').textContent='−'+kbFmt(dAmt);
+ } else document.getElementById('osDiscRow').style.display='none';
+ document.getElementById('osShip').textContent=tot>=FREE?'Free':'By courier tariff';
+ document.getElementById('osTot').textContent=kbFmt(tot);
+ document.getElementById('osUsd').textContent='≈ '+usd(tot)+' (reference)';
+ return tot;
+}
 function renderSum(){
  var el=document.getElementById('osItems'); sub=0;
  if(!ids.length){
@@ -170,40 +215,53 @@ function renderSum(){
  }
  el.innerHTML=ids.map(function(k){var it=KB_CAT[k],line=it[1]*cart[k];sub+=line;
   return '<div class="l"><span>'+it[0]+' × '+cart[k]+'</span><span class="n">'+kbFmt(line)+'</span></div>'}).join('');
- document.getElementById('osSub').textContent=kbFmt(sub);
- document.getElementById('osShip').textContent=sub>=FREE?'Free':'By courier tariff';
- document.getElementById('osTot').textContent=kbFmt(sub);
+ totals();
  return true;
 }
 var hasCart=renderSum();
 
+function applyCoupon(){
+ var c=document.getElementById('cpIn').value.trim().toUpperCase();
+ var m=document.getElementById('cpMsg'); m.style.display='block';
+ if(COUPONS[c]){disc=COUPONS[c];discCode=c;m.style.color='#2E7D52';m.textContent='Coupon applied: '+c+' (−'+Math.round(disc*100)+'%)';}
+ else {disc=0;discCode='';m.style.color='#A4540A';m.textContent=c?'Invalid coupon code.':'Enter a coupon code.';}
+ totals();
+}
+
 function placeOrder(){
  var err=document.getElementById('coErr');
  var pm=document.querySelector('input[name=pm]:checked').value;
- if(pm==='cod'&&sub>COD_MAX){err.textContent='COD is available for orders under '+kbFmt(COD_MAX)+' — please choose bank transfer.';err.style.display='block';return;}
+ var tot=totals();
+ if(pm==='cod'&&tot>COD_MAX){err.textContent='COD is available for orders under '+kbFmt(COD_MAX)+' — please choose bank transfer or card.';err.style.display='block';return;}
  err.style.display='none';
  var no='MH-'+new Date().toISOString().slice(2,10).replace(/-/g,'')+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
- var order={no:no,total:sub,pm:pm,items:ids.map(function(k){return KB_CAT[k][0]+' x'+cart[k]}),
+ var order={no:no,total:tot,coupon:discCode,pm:pm,items:ids.map(function(k){return KB_CAT[k][0]+' x'+cart[k]}),
   name:document.getElementById('fName').value,phone:document.getElementById('fPhone').value,
   city:document.getElementById('fCity').value,dist:document.getElementById('fDist').value,addr:document.getElementById('fAddr').value,
   note:document.getElementById('fNote').value,at:new Date().toISOString()};
  try{var os=JSON.parse(localStorage.getItem('kborders')||'[]');os.push(order);localStorage.setItem('kborders',JSON.stringify(os));}catch(e){}
  try{localStorage.removeItem('kbcart');}catch(e){}
  kbCount();
- /* confirmation view */
  document.getElementById('coWrap').style.display='none';
  document.getElementById('coDone').style.display='block';
  document.getElementById('doneNo').textContent=no;
- document.getElementById('doneTot').textContent=kbFmt(sub);
+ document.getElementById('doneTot').textContent=kbFmt(tot);
+ document.getElementById('doneUsd').textContent='(≈ '+usd(tot)+')';
  if(pm==='qr'){
-  document.getElementById('qrImg').src='https://img.vietqr.io/image/970436-0000000000000-compact2.png?amount='+sub+'&addInfo='+encodeURIComponent(no)+'&accountName='+encodeURIComponent('MIRACLE HEALTHCARE');
-  document.getElementById('qrAmt').textContent=kbFmt(sub);
+  document.getElementById('doneQR').style.display='block';
+  document.getElementById('qrImg').src='https://img.vietqr.io/image/970436-0000000000000-compact2.png?amount='+tot+'&addInfo='+encodeURIComponent(no)+'&accountName='+encodeURIComponent('MIRACLE HEALTH CARE VINA');
+  document.getElementById('qrAmt').textContent=kbFmt(tot);
   document.getElementById('qrMemo').textContent=no;
+ } else if(pm==='card'){
+  document.getElementById('doneCard').style.display='block';
+ } else if(pm==='paypal'){
+  document.getElementById('donePP').style.display='block';
+  document.getElementById('ppAmt').textContent=usd(tot);
+  document.getElementById('ppBtn').href='https://www.paypal.com/paypalme/REPLACE_HANDLE/'+(tot/USD_RATE).toFixed(2)+'USD';
  } else {
-  document.getElementById('doneQR').style.display='none';
   document.getElementById('doneCOD').style.display='block';
  }
- var msg='Order '+no+'\n'+order.items.join('\n')+'\nTotal: '+kbFmt(sub)+'\nPayment: '+(pm==='qr'?'Bank transfer':'COD')+'\n'+order.name+' / '+order.phone+'\n'+order.addr+', '+order.dist+', '+order.city+(order.note?'\nNote: '+order.note:'');
+ var msg='Order '+no+'\n'+order.items.join('\n')+(discCode?'\nCoupon: '+discCode:'')+'\nTotal: '+kbFmt(tot)+' (~'+usd(tot)+')\nPayment: '+({qr:'Bank transfer',card:'Card link',paypal:'PayPal',cod:'COD'}[pm])+'\n'+order.name+' / '+order.phone+'\n'+order.addr+', '+order.dist+', '+order.city+(order.note?'\nNote: '+order.note:'');
  document.getElementById('waBtn').href='https://wa.me/?text='+encodeURIComponent(msg);
  window.scrollTo(0,0);
 }
