@@ -199,7 +199,7 @@ var curTab='desc', curL='en';
 document.title=p.name+' — Miracle Healthcare';
 el('pdName').textContent=p.name;
 el('bcName').textContent=p.name;
-el('pdPrice').textContent=fmt(p.pn);
+if(p.po){el('pdPrice').innerHTML=fmt(p.pn)+' <s style="font-size:16px;color:#A9A795;font-weight:400">'+fmt(p.po)+'</s>';}else{el('pdPrice').textContent=fmt(p.pn);}
 el('pdUsd').textContent='≈ $'+(p.pn/25860).toFixed(2)+' USD';
 var img='assets/img/'+p.img+'.jpg?v=2';
 el('pdImg').src=img; el('pdImg').alt=p.name;
@@ -225,7 +225,7 @@ function render(lang){
  el('bcCat').textContent=C[p.cat]; el('bcCat').href='shop.html?cat='+p.cat;
  el('pdCat').textContent=C[p.cat];
  el('pdWho').textContent=p.rx?L.whoRx:L.who;
- el('pdStock').textContent=L.stock+(p.st?' ('+p.st+')':'');
+ if(p.st){el('pdStock').textContent=L.stock+' ('+p.st+')';el('pdStock').style.color='';}else{el('pdStock').textContent=L.oos||'Out of stock';el('pdStock').style.color='#A2584E';}
  el('uiQty').textContent=L.qty;
  el('uiTh1').textContent=L.th1; el('uiTh2').textContent=L.th2; el('uiTh3').textContent=L.th3;
  el('pdAdded').innerHTML=L.added+' <a href="cart.html" style="color:#2E7D52">'+L.viewCart+'</a>';

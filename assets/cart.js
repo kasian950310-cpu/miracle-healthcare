@@ -1,18 +1,24 @@
 /* KBEAUTY demo cart — localStorage, per-browser. Rx items cannot be added (B2B verification required). */
 var KB_CAT={
- innotox:['INNOTOX 100U',2457000,'innotox',1],
+ meditoxin:['Meditoxin 100U',1526000,'meditoxin',1],
+ meditoxin200:['Meditoxin 200U',2043000,'meditoxin',1],
+ innotox50:['INNOTOX 50U',1164000,'innotox50',1],
+ innotox:['INNOTOX 100U',1965000,'innotox',1],
  coretox:['CORETOX 100U',1862000,'coretox',1],
- botulax:['Botulax 100U',2198000,'botulax',1],
- botaone:['BOTAONE 100U',1950000,'botaone',1],
- neuramisL:['NEURAMIS Light 1.1ml',1009000,'neuramis',0],
- neuramisD:['NEURAMIS Deep Lidocaine 1.1ml',1009000,'neuramis',0],
- rejeunesse:['Rejeunesse Deep 1.1ml',931000,'rejeunesse',0],
- rejuran:['Rejuran Healer 2ml',7732000,'rejuran',0],
- neuraderm:['NEURADERM Core Time Ampoule',1150000,'neuraderm',0],
- lipolab:['Lipo Lab PPC 10ml ×10',1862000,'lipolab',1],
- luthione:['Glutathione 1200mg (10 vials)',2146000,'luthione',1],
- evecain:['EVE CAIN Cream 30g',259000,'evecain',0],
- bbraun:['B.Braun syringe 31G 1ml (100)',1552000,'bbraun',0]
+ botaone:['BOTAONE 100U',1422000,'botaone',1],
+ neuramisVol:['NEURAMIS Volume Lidocaine 1ml',802000,'neuramisvol',0],
+ neuramisD:['NEURAMIS Deep Lidocaine 1ml',802000,'neuramis',0],
+ neuramisDeep:['NEURAMIS Deep 1ml',802000,'neuramis2',0],
+ neuramisLido:['NEURAMIS Lidocaine 1ml',802000,'neuramis2',0],
+ neuramisL:['NEURAMIS Light Lidocaine 1ml',802000,'neuramis',0],
+ ndmist:['NEURADERM Deep Calming Mist 100ml',465000,'ndmist',0],
+ ndsun:['NEURADERM Intensive Sun Cream 50ml',465000,'ndsun',0],
+ ndamp1:['NEURADERM Core Time Ampoule 15ml',491000,'neuraderm',0],
+ ndamp2:['NEURADERM Core Time Ampoule 30ml (2-pack)',776000,'neuraderm',0],
+ ndamp50:['NEURADERM Core Time Ampoule 50ml',1086000,'neuraderm',0],
+ ndessence:['NEURADERM Core Time Synergy Essence 155ml',957000,'ndessence',0],
+ ndcream:['NEURADERM Derma Cream 100g',517000,'ndcream',0],
+ ndmd:['NEURADERM MD Cream 180g',957000,'ndmd',0]
 };
 function kbFmt(n){return '₫'+n.toLocaleString('vi-VN')}
 function kbGet(){try{return JSON.parse(localStorage.getItem('kbcart')||'{}')}catch(e){return {}}}
