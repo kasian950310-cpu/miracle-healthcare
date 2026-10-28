@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /checkout.html
+Disallow: /cart.html
+Disallow: /signin.html
+
+Sitemap: https://kasian950310-cpu.github.io/miracle-healthcare/sitemap.xml
