@@ -95,7 +95,7 @@ function render(){
  var rows=ids.map(function(k){
   var it=KB_CAT[k], line=it[1]*c[k]; sub+=line;
   return '<div class="crow">'
-   +'<span class="im"><img src="assets/img/'+it[2]+'.jpg?v=2" alt=""></span>'
+   +'<span class="im"><img src="assets/img/'+it[2]+'.jpg?v=3" alt=""></span>'
    +'<span class="nm"><a href="product.html?id='+k+'">'+it[0]+'</a><div class="pr">'+kbFmt(it[1])+'</div></span>'
    +'<span class="qbox"><button onclick="chg(\''+k+'\',-1)">−</button><span>'+c[k]+'</span><button onclick="chg(\''+k+'\',1)">+</button></span>'
    +'<span class="sub2">'+kbFmt(line)+'</span>'
