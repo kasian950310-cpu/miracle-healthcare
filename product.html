@@ -201,7 +201,7 @@ el('pdName').textContent=p.name;
 el('bcName').textContent=p.name;
 if(p.po){el('pdPrice').innerHTML=fmt(p.pn)+' <s style="font-size:16px;color:#A9A795;font-weight:400">'+fmt(p.po)+'</s>';}else{el('pdPrice').textContent=fmt(p.pn);}
 el('pdUsd').textContent='≈ $'+(p.pn/25860).toFixed(2)+' USD';
-var img='assets/img/'+p.img+'.jpg?v=3';
+var img='assets/img/'+p.img+'.jpg?v=4';
 el('pdImg').src=img; el('pdImg').alt=p.name;
 document.querySelector('#pdThumb img').src=img;
 var pills='';
@@ -238,7 +238,7 @@ function render(lang){
  /* bundle */
  el('uiBundleH').textContent=L.bundleH;
  el('uiBundleTotal').textContent=L.bundleTotal;
- function bItem(k,link){var q=PD.p[k];var inner='<span class="im"><img src="assets/img/'+q.img+'.jpg?v=3" alt="'+esc(q.name)+'"></span><span>'+esc(q.name)+'</span><span class="pr">'+fmt(q.pn)+'</span>';
+ function bItem(k,link){var q=PD.p[k];var inner='<span class="im"><img src="assets/img/'+q.img+'.jpg?v=4" alt="'+esc(q.name)+'"></span><span>'+esc(q.name)+'</span><span class="pr">'+fmt(q.pn)+'</span>';
   return link?'<a class="bi" href="product.html?id='+k+'">'+inner+'</a>':'<span class="bi">'+inner+'</span>'}
  var bhtml=bItem(id,false);
  p.bundle.forEach(function(k){bhtml+='<span class="plus">+</span>'+bItem(k,true)});
@@ -255,13 +255,13 @@ function render(lang){
  var rel=Object.keys(PD.p).filter(function(k){return k!==id&&PD.p[k].cat===p.cat});
  Object.keys(PD.p).forEach(function(k){if(rel.length<4&&k!==id&&rel.indexOf(k)<0)rel.push(k)});
  el('pdRel').innerHTML=rel.slice(0,4).map(function(k){var q=PD.p[k];
-  return '<a class="card" href="product.html?id='+k+'"><div class="pimg" style="aspect-ratio:3/4;height:auto;width:100%"><img src="assets/img/'+q.img+'.jpg?v=3" alt="'+esc(q.name)+'" style="width:100%;height:100%;object-fit:cover"></div><div class="pbody"><div class="pname">'+esc(q.name)+'</div><div class="row" style="gap:6px">'+(q.rx?'<span class="pill p-rx">Rx</span>':'')+(q.cold?'<span class="pill p-cold">❄ Cold</span>':'')+'</div><div class="pprice">'+fmt(q.pn)+'</div></div></a>'}).join('');
+  return '<a class="card" href="product.html?id='+k+'"><div class="pimg" style="aspect-ratio:3/4;height:auto;width:100%"><img src="assets/img/'+q.img+'.jpg?v=4" alt="'+esc(q.name)+'" style="width:100%;height:100%;object-fit:cover"></div><div class="pbody"><div class="pname">'+esc(q.name)+'</div><div class="row" style="gap:6px">'+(q.rx?'<span class="pill p-rx">Rx</span>':'')+(q.cold?'<span class="pill p-cold">❄ Cold</span>':'')+'</div><div class="pprice">'+fmt(q.pn)+'</div></div></a>'}).join('');
  /* recently viewed */
  el('uiRvH').textContent=L.rvH;
  if(rvList.length){
   el('pdRvSec').style.display='block';
   el('pdRv').innerHTML=rvList.map(function(k){var q=PD.p[k];
-   return '<a class="card" href="product.html?id='+k+'"><div class="pimg" style="aspect-ratio:3/4;height:auto;width:100%"><img src="assets/img/'+q.img+'.jpg?v=3" alt="'+esc(q.name)+'" style="width:100%;height:100%;object-fit:cover"></div><div class="pbody"><div class="pname">'+esc(q.name)+'</div><div class="pprice">'+fmt(q.pn)+'</div></div></a>'}).join('');
+   return '<a class="card" href="product.html?id='+k+'"><div class="pimg" style="aspect-ratio:3/4;height:auto;width:100%"><img src="assets/img/'+q.img+'.jpg?v=4" alt="'+esc(q.name)+'" style="width:100%;height:100%;object-fit:cover"></div><div class="pbody"><div class="pname">'+esc(q.name)+'</div><div class="pprice">'+fmt(q.pn)+'</div></div></a>'}).join('');
  }
  /* modal + rel heading */
  el('uiRelH').textContent=L.relH;
